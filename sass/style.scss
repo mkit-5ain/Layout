@@ -1,0 +1,42 @@
+ // VARIABLE
+
+$white-color: #fff;
+$black-color: #111;
+$primary-color: #737373;
+$secondary-color: #eee;
+
+$size-s :14px;
+$size-m :18px;
+$size-l :24px;
+
+$align-top: top;
+$align-middle: middle;
+$align-bottom: bottom;
+$align-left: left;
+$align-center: center;
+$align-right: right;
+
+// MIXIN
+
+@mixin box-sizing($css-selector) {
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+}
+
+@mixin clearfix {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin spritebox($left, $top, $width, $height) {
+  background-repeat: no-repeat;
+  background-position: $left $top;
+  width: $width;
+  height: $height;
+}
