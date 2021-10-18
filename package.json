@@ -1,0 +1,22 @@
+{
+  "name": "layout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkit-5ain/Layout.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mkit-5ain/Layout/issues"
+  },
+  "homepage": "https://github.com/mkit-5ain/Layout#readme",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
