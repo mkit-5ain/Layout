@@ -40,3 +40,13 @@ $align-right: right;
   width: $width;
   height: $height;
 }
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%)
+    }
+
+    99%, to {
+        transform: translateX(-100%)
+    }
+}

@@ -1,10 +1,17 @@
 body { background: #e6f0ff; }
-header { display: flex; text-align: center; 
+header { display: flex; text-align: center; overflow: hidden;
     button {
         width: 40px;
         height: 40px;
         border-radius: 0px;
         background: linear-gradient(145deg, #f6ffff, #cfd8e6);
         box-shadow: 4px 4px 8px #c4ccd9, -4px -4px 8px #ffffff;
+    }
+}
+.marquee-wrap { width: 200%; white-space: nowrap;
+    .marquee {
+        display: inline-block;
+        transform:translateX(100%);
+        animation: 10s marquee infinite;
     }
 }
