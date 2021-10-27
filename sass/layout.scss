@@ -30,7 +30,7 @@ header {
         }
     }
 }
-.prologue-wrap { margin-top: 150px; 
+.prologue-wrap { margin-top: 150px;
     .prologue {
         position: relative;
         height: 270px;
@@ -50,7 +50,7 @@ header {
             width: 47px;
             height: 47px;
             border-radius: 100%;
-            background: #1c3f61;
+            background: $second-color;
             animation: 1.5s dotAnimation forwards;
             animation-delay: 1s;
             transition: 1s cubic-bezier(0.32, 0.18, 0.26, 0.84);
