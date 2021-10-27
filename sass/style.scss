@@ -2,7 +2,7 @@
 
 $white-color: #fff;
 $black-color: #111;
-$primary-color: #737373;
+$primary-color: #F9F5EF;
 $secondary-color: #eee;
 
 $size-s :14px;
@@ -41,6 +41,7 @@ $align-right: right;
   height: $height;
 }
 
+// KEYFRAMES
 @keyframes marquee {
     0% {
         transform: translateX(0%);
@@ -49,4 +50,9 @@ $align-right: right;
     99%, to {
         transform: translateX(-100%);
     }
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
 }

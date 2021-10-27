@@ -1,4 +1,5 @@
-body { background: #e6f0ff; }
+@import 'style.scss';
+body { background-color: $primary-color; }
 header { display: flex; text-align: center; overflow: hidden;
     button {
         width: 40px;
