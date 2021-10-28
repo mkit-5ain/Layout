@@ -1,19 +1,32 @@
 header {
     display: flex;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: calc(100% - 4vw);
     margin: 2vw;
     text-align: center;
     overflow: hidden;
-    h1 {  position: relative; line-height: 0px;
-        p { font-size: 45px; color: #707070; }
-    }
-    button {
-        width: 80px;
-        height: 80px;
-        border: 1px solid #111; 
+    justify-content: center;
+    align-items: center;
+    transition: .5s ease-in-out;
+    &.scroll-active { transform: translate(0px, -8.18vw); }
+    .logo { position: relative; line-height: 0px; }
+    .menu-btn {
+        width: 60px;
+        height: 60px;
+        span {
+            display: block;
+            width: 40px;
+            height: 5px;
+            margin: 10px;
+            background: #111;
+        }
     }
 }
 .marquee-wrap {
     width: calc(100% - 104px);
+    margin: 0px 100px;
     overflow: hidden;
     .marquee {
         display: inline-block;
@@ -27,7 +40,7 @@ header {
         }
     }
 }
-.prologue-wrap { margin-top: 150px;
+.prologue-wrap { margin-top: 14vw;
     .prologue {
         position: relative;
         height: 270px;
