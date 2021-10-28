@@ -1,18 +1,15 @@
-@import 'style.scss';
 header {
     display: flex;
     margin: 2vw;
     text-align: center;
     overflow: hidden;
-    h1 {  position: relative;
+    h1 {  position: relative; line-height: 0px;
         p { font-size: 45px; color: #707070; }
     }
     button {
-        width: 40px;
-        height: 40px;
-        border-radius: 0px;
-        background: linear-gradient(145deg, #f6ffff, #cfd8e6);
-        box-shadow: 4px 4px 8px #c4ccd9, -4px -4px 8px #ffffff;
+        width: 80px;
+        height: 80px;
+        border: 1px solid #111; 
     }
 }
 .marquee-wrap {
@@ -41,40 +38,40 @@ header {
         transition: 1s cubic-bezier(0.74, 0.51, 0.51, 1.26);
         animation: 0.8s introTextAnimation forwards;
         opacity: 0;
-        color: $second-color;
+        color: $black-color;
         &.effect-dot { width: 960px;
-          .inner-dot {
-            position: absolute;
-            bottom: 0px;
-            right: 0px;
-            width: 47px;
-            height: 47px;
-            border-radius: 100%;
-            background: $second-color;
-            animation: 1.5s dotAnimation forwards;
-            animation-delay: 1s;
-            transition: 1s cubic-bezier(0.32, 0.18, 0.26, 0.84);
-            opacity: 0;
-            box-shadow: 1px 1px 1px 0px #151414
-          }
+            .inner-dot {
+                position: absolute;
+                bottom: 0px;
+                right: 0px;
+                width: 47px;
+                height: 47px;
+                border-radius: 100%;
+                background: $black-color;
+                animation: 1.5s dotAnimation forwards;
+                animation-delay: 1s;
+                transition: 1s cubic-bezier(0.32, 0.18, 0.26, 0.84);
+                opacity: 0;
+                box-shadow: 1px 1px 1px 0px #151414
+            }
         }
         &.effect-blur { animation-delay: 0.4s; }
         &.effect-line { animation-delay: 0.2s;
-          &:after {
-            content: '';
-            position: absolute;
-            bottom: -100px;
-            left: 570px;
-            width: 500px;
-            height: 150px;
-            border-radius: 100px;
-            background: rgb(108, 99, 255, 0.8);
-            box-shadow: 1px 1px 1px 0px #151414;
-            transition: 1s ease-in-out;
-            animation: 0.5s TopBottomAnimation forwards;
-            animation-delay: 2s;
-            opacity: 0;
-          }
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: -80px;
+                left: 570px;
+                width: 500px;
+                height: 150px;
+                border-radius: 100px;
+                background: rgb(28, 63, 97, 0.8);
+                box-shadow: 1px 1px 1px 0px #151414;
+                transition: 1s ease-in-out;
+                animation: 0.5s TopBottomAnimation forwards;
+                animation-delay: 2s;
+                opacity: 0;
+            }
         }
     }
 }

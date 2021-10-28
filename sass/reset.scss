@@ -1,13 +1,13 @@
 body {
-    font-family: "futura-pt",sans-serif;
-    background-color: $primary-color;
-    cursor: url('../image/icon/cursor.svg'), auto;
+    font-family: $futura;
+    background-color: #f0ede6;
+    // cursor: url('../image/icon/cursor.svg'), auto;
 }
 body,p,dl,ol,ul,li,dd,input,h1,h2,h3,h4,h5,h6 { margin: 0px; padding: 0px; }
 ul,li,ol { list-style: none; }
 textarea { padding: 0px; resize: none; }
 img { vertical-align: top; }
 table th { font-weight: normal; }
-a { color: inherit; text-decoration: auto; }
+a { color: inherit; text-decoration: auto; font-family: $futura; }
 i { font-style: normal; }
-button { background: none; border: 0px; padding: 0px; margin: 0px; }
+button { background: none; border: 0px; padding: 0px; margin: 0px;  font-family: $futura; }
