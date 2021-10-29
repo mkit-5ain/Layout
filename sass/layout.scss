@@ -4,19 +4,35 @@ header {
     top: 0px;
     left: 0px;
     width: calc(100% - 4vw);
-    margin: 2vw;
+    padding: 2vw;
     text-align: center;
     overflow: hidden;
     justify-content: center;
     align-items: center;
-    transition: .5s ease-in-out;
+    transition: .5s ease;
     &.scroll-active {
-        
+        .logo {
+            transform: translate(-90px, 0px);
+            transition: .5s ease;
+            opacity: 0;
+        }
+        .marquee-wrap {
+            transition: .5s ease;
+            opacity: 0;
+            .marquee { animation-play-state: paused; }
+        }
+        .menu-btn {
+            transition: .5s ease;
+            transform: translate(90px, 0px);
+            opacity: 0;
+        }
     }
-    .logo { position: relative; line-height: 0px; }
+    .logo { position: relative; line-height: 0px; transform: translate(0px, 0px); transition: .5s ease; }
     .menu-btn {
         width: 60px;
         height: 60px;
+        cursor: pointer;
+        transition: .5s ease;
         span {
             display: block;
             width: 40px;
@@ -30,15 +46,21 @@ header {
     width: calc(100% - 104px);
     margin: 0px 100px;
     overflow: hidden;
+    transition: .5s ease;
     .marquee {
         display: inline-block;
         width: 33.3333%;
         padding-left: 100%;
+        font-size: 20px;
+        letter-spacing: 10px;
         white-space: nowrap;
         animation: 10s marquee linear infinite;
         &::after {
             content: '';
             white-space: nowrap;
+        }
+        &:hover {
+            animation-play-state: paused;
         }
     }
 }
@@ -48,12 +70,13 @@ header {
         height: 270px;
         line-height: 250px;
         font-size: 300px;
-        font-weight: bold;
+        font-family: $futura-logo;
+        color: $black-color;
+        letter-spacing: 15px;
         text-transform: uppercase;
         transition: 1s cubic-bezier(0.74, 0.51, 0.51, 1.26);
         animation: 0.8s introTextAnimation forwards;
         opacity: 0;
-        color: $black-color;
         &.effect-dot { width: 960px;
             .inner-dot {
                 position: absolute;
