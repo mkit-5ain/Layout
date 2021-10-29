@@ -10,7 +10,9 @@ header {
     justify-content: center;
     align-items: center;
     transition: .5s ease-in-out;
-    &.scroll-active { transform: translate(0px, -8.18vw); }
+    &.scroll-active {
+        
+    }
     .logo { position: relative; line-height: 0px; }
     .menu-btn {
         width: 60px;
