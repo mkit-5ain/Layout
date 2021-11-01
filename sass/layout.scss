@@ -80,10 +80,10 @@ header {
         &.effect-dot { width: 960px;
             .inner-dot {
                 position: absolute;
-                bottom: 0px;
-                right: 0px;
-                width: 47px;
-                height: 47px;
+                bottom: 30px;
+                right: -225px;
+                width: 85px;
+                height: 70px;
                 border-radius: 100%;
                 background: $black-color;
                 animation: 1.5s dotAnimation forwards;
