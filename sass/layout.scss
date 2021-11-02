@@ -77,6 +77,7 @@ header {
         transition: 1s cubic-bezier(0.74, 0.51, 0.51, 1.26);
         animation: 0.8s introTextAnimation forwards;
         opacity: 0;
+        text-shadow: 2px 2px 10px #111;
         &.effect-dot { width: 960px;
             .inner-dot {
                 position: absolute;
@@ -90,7 +91,7 @@ header {
                 animation-delay: 1s;
                 transition: 1s cubic-bezier(0.32, 0.18, 0.26, 0.84);
                 opacity: 0;
-                box-shadow: 1px 1px 1px 0px #151414
+                box-shadow: 1px 1px 10px 0px #151414
             }
         }
         &.effect-blur { animation-delay: 0.4s; }
