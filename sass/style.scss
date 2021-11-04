@@ -28,6 +28,11 @@ $align-right: right;
 $futura-logo: 'logo';
 $futura: "futura-pt",sans-serif;
 
+$marquee-width: 100vw;
+$offset: 20vw;
+$move-initial: calc(-25% + $offset);
+$move-final: calc(-50% + $offset);
+$item-font-size: 10vw;
 // MIXIN
 
 @mixin box-sizing($css-selector) {
@@ -54,15 +59,15 @@ $futura: "futura-pt",sans-serif;
 }
 
 // KEYFRAMES
-@keyframes marquee {
-    0% {
-        transform: translateX(0%);
-    }
-
-    99%, to {
-        transform: translateX(-100%);
-    }
-}
+// @keyframes marquee {
+//     0% {
+//         transform: translateX(0%);
+//     }
+//
+//     99%, to {
+//         transform: translateX(-100%);
+//     }
+// }
 // 이미지 회전
 @keyframes spin {
 	0% { transform: rotate(0deg); }
@@ -110,4 +115,24 @@ $futura: "futura-pt",sans-serif;
   to {
     opacity: 1; transition: 1s ease-in-out;
   }
+}
+
+/* 도트 배지 */
+@keyframes dotBadge {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+/* 텍스트 애니메이션*/
+@keyframes text-marquee {
+	0% {
+		transform: translate3d($move-initial, 0, 0);
+	}
+
+	100% {
+		transform: translate3d($move-final, 0, 0);
+	}
 }

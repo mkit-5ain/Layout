@@ -101,11 +101,13 @@ header {
     transition: .5s ease;
     .marquee {
         display: inline-block;
-        width: 33.3333%;
-        padding-left: 100%;
         font-size: 20px;
         white-space: nowrap;
         animation: 10s marquee linear infinite;
+        p {
+            display: inline-block;
+            vertical-align: middle;
+        }
         &::after {
             content: '';
             white-space: nowrap;
@@ -115,7 +117,9 @@ header {
         }
     }
 }
-.prologue-wrap { padding-top: 14vw; overflow: hidden;
+.prologue-wrap {
+    padding-top: 14vw;
+    overflow: hidden;
     .prologue {
         position: relative;
         height: 270px;
@@ -164,4 +168,123 @@ header {
             }
         }
     }
+}
+.badge {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    margin: 300px auto;
+    border-radius: 50px;
+    box-shadow: 20px 20px 60px #ccc9c4, -20px -20px 60px #ffffff;
+    .circle {
+        position: absolute;
+        top: calc(50% - 10px);
+        left: calc(50% - 10px);
+        width: 20px;
+        height: 20px;
+        background: $primary-color;
+        border-radius: 13px;
+        box-shadow: 1px 1px 2px 0px #5d1717;
+        transition: 0.2s ease-in-out;
+        animation: 1s dotBadge infinite both;
+        &:nth-child(1) { left: 20%; animation-delay: 0.1s; }
+        &:nth-child(2) { animation-delay: 0.3s; }
+        &:nth-child(3) { left: auto; right: 20%; animation-delay: 0.5s; }
+    }
+}
+.hover-marquee {
+    counter-reset: section;
+}
+.menu__item {
+	cursor: default;
+	position: relative;
+	padding: 0 5vw;
+}
+
+.menu__item-link {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	-webkit-text-stroke: 1.5px #000;
+	text-stroke: 1.5px #000;
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent;
+	color: transparent;
+	transition: opacity 0.4s;
+}
+
+.menu__item-link::before {
+	all: initial;
+	counter-increment: section;
+	content:  counter(section);
+	position: absolute;
+	bottom: 60%;
+	left: 0;
+	pointer-events: none;
+}
+
+.menu__item-link:hover {
+	transition-duration: 0.1s;
+	opacity: 0;
+}
+
+.menu__item-img {
+	pointer-events: none;
+	position: absolute;
+	height: 50vh;
+	max-height: 400px;
+	opacity: 0;
+	left: 100%;
+	top: 50%;
+	transform: translate3d(calc(-100% - 6vw),-30%,0) translate3d(0,20px,0);
+}
+
+.menu__item-link:hover + .menu__item-img {
+	opacity: 1;
+	transform: translate3d(calc(-100% - 6vw),-30%,0) rotate3d(0,0,1,4deg);
+	transition: all 0.4s;
+}
+
+.marquee {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: $marquee-width;
+	overflow: hidden;
+	pointer-events: none;
+	mix-blend-mode: color-burn;
+}
+
+.marquee__inner {
+	width: fit-content;
+	display: flex;
+	position: relative;
+	transform: translate3d($move-initial, 0, 0);
+	animation: text-marquee 5s linear infinite;
+	animation-play-state: paused;
+	opacity: 0;
+	transition: opacity 0.1s;
+}
+
+.menu__item-link:hover ~ .marquee .marquee__inner {
+	animation-play-state: running;
+	opacity: 1;
+	transition-duration: 0.4s;
+}
+
+.marquee span {
+	text-align: center;
+}
+
+.menu__item-link,
+.marquee span {
+	white-space: nowrap;
+	font-size: $item-font-size;
+	padding: 0 1vw;
+	font-weight: 900;
+	line-height: 1.15;
+}
+
+.marquee span {
+	font-style: italic;
 }
