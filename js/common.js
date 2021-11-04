@@ -1,6 +1,4 @@
 $(document).ready(function () {
-    imageCache();
-    scrollFadeInOut();
     console.log(`%c
     __        ______  __       __           _____  __    __  __    __  ________         ______   __    __
     /  |      /      |/  \     /  |         /     |/  |  /  |/  \  /  |/        |       /      \ /  |  /  |
@@ -11,7 +9,10 @@ $(document).ready(function () {
     $$ |_____  _$$ |_ $$ |$$$/ $$ |      $$ \__$$ |$$ \__$$ |$$ |$$$$ |$$ |_____       /  \__$$ |$$ \__$$ |
     $$       |/ $$   |$$ | $/  $$ |      $$    $$/ $$    $$/ $$ | $$$ |$$       |      $$    $$/ $$    $$/
     $$$$$$$$/ $$$$$$/ $$/      $$/        $$$$$$/   $$$$$$/  $$/   $$/ $$$$$$$$/        $$$$$$/   $$$$$$/
-    `, "color:black")
+    `, "color:#028a58")
+    imageCache();
+    scrollFadeInOut();
+    menuActive();
 });
 
 function imageCache () {
@@ -30,5 +31,11 @@ function scrollFadeInOut() {
             $('header').removeClass('scroll-active');
         }
         position = scroll;
+    });
+}
+
+function menuActive() {
+    $('.menu-btn').click(function () {
+        $('.menu-view').toggleClass('active');
     });
 }
