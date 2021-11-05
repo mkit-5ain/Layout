@@ -33,7 +33,14 @@ $offset: 20vw;
 $move-initial: calc(-25% + $offset);
 $move-final: calc(-50% + $offset);
 $item-font-size: 10vw;
+
 // MIXIN
+
+@mixin center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 @mixin box-sizing($css-selector) {
     box-sizing:border-box;
@@ -68,11 +75,13 @@ $item-font-size: 10vw;
 //         transform: translateX(-100%);
 //     }
 // }
+
 // 이미지 회전
 @keyframes spin {
 	0% { transform: rotate(0deg); }
 	100% { transform: rotate(360deg); }
 }
+
 // 메인 텍스트
 @keyframes introTextAnimation {
     from {
@@ -96,6 +105,7 @@ $item-font-size: 10vw;
     }
   }
 }
+
 // 메인 텍스트 dot
 @keyframes dotAnimation {
   10% {
@@ -107,6 +117,7 @@ $item-font-size: 10vw;
     opacity: 1;
   }
 }
+
 // 메인 텍스트 박스 dot
 @keyframes TopBottomAnimation {
   from {
@@ -126,6 +137,7 @@ $item-font-size: 10vw;
     opacity: 0.4;
   }
 }
+
 /* 텍스트 애니메이션*/
 @keyframes text-marquee {
 	0% {
