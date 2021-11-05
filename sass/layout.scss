@@ -1,5 +1,5 @@
-header {
-    display: flex;
+.header {
+    @include center;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -7,11 +7,10 @@ header {
     padding: 2vw;
     text-align: center;
     overflow: hidden;
-    justify-content: center;
-    align-items: center;
     transition: .5s ease;
     z-index: 10;
     &.scroll-active {
+        pointer-events: none;
         .logo {
             transform: translate(-90px, 0px);
             transition: .5s ease;
@@ -44,8 +43,8 @@ header {
         }
     }
     .menu-view {
+        @include center;
         position: fixed;
-        display: flex;
         top: 0px;
         left: 0px;
         z-index: 10;
@@ -53,8 +52,6 @@ header {
         height: 100%;
         pointer-events: none;
         opacity: 0;
-        align-items: center;
-        justify-content: center;
         transition: 0.5s ease-in-out;
         &.active { pointer-events: all; opacity: 1;
             .menu-view-menubox {
@@ -200,14 +197,20 @@ header {
     	padding: 0 5vw;
         .work__list--link {
         	display: inline-block;
-        	cursor: pointer;
-        	position: relative;
+            position: relative;
+            line-height: 1.15;
+        	padding: 0 1vw;
+            font-family: 'logo';
+            font-size: $item-font-size;
+        	font-weight: 900;
+            color: transparent;
         	-webkit-text-stroke: 1.5px #000;
         	text-stroke: 1.5px #000;
         	-webkit-text-fill-color: transparent;
         	text-fill-color: transparent;
-        	color: transparent;
         	transition: opacity 0.4s;
+            white-space: nowrap;
+            cursor: pointer;
             &::before {
                 all: initial;
             	counter-increment: section;
@@ -232,53 +235,48 @@ header {
         	top: 50%;
         	transform: translate3d(calc(-100% - 6vw),-30%,0) translate3d(0,20px,0);
         }
+        .work__list--marquee {
+        	position: absolute;
+        	top: 0;
+        	left: 0;
+        	width: $marquee-width;
+        	overflow: hidden;
+        	pointer-events: none;
+        	mix-blend-mode: color-burn;
+            .marquee--text {
+            	width: fit-content;
+            	display: flex;
+            	position: relative;
+            	transform: translate3d($move-initial, 0, 0);
+            	animation: text-marquee 5s linear infinite;
+            	animation-play-state: paused;
+            	opacity: 0;
+            	transition: opacity 0.1s;
+                .text {
+                    text-align: center;
+                    font-style: italic;
+                }
+            }
+        }
     }
     .work__list--link:hover + .work__list--img {
     	opacity: 1;
     	transform: translate3d(calc(-100% - 6vw),-30%,0) rotate3d(0,0,1,4deg);
     	transition: all 0.4s;
     }
-    .work__list--link:hover ~ .marquee .marquee__inner {
+    .work__list--link:hover ~ .work__list--marquee .marquee--text {
     	animation-play-state: running;
     	opacity: 1;
     	transition-duration: 0.4s;
     }
 }
 
-.marquee {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: $marquee-width;
-	overflow: hidden;
-	pointer-events: none;
-	mix-blend-mode: color-burn;
-}
-
-.marquee__inner {
-	width: fit-content;
-	display: flex;
-	position: relative;
-	transform: translate3d($move-initial, 0, 0);
-	animation: text-marquee 5s linear infinite;
-	animation-play-state: paused;
-	opacity: 0;
-	transition: opacity 0.1s;
-}
-
-.marquee span {
-	text-align: center;
-}
-
 .work__list--link,
-.marquee span {
-	white-space: nowrap;
+.work__list--marquee span {
+    line-height: 1.15;
+    padding: 0 1vw;
+    font-family: 'logo';
 	font-size: $item-font-size;
-	padding: 0 1vw;
 	font-weight: 900;
-	line-height: 1.15;
-}
-
-.marquee span {
-	font-style: italic;
+    white-space: nowrap;
 }
