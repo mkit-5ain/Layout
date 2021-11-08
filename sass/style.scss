@@ -153,4 +153,9 @@ $item-font-size: 10vw;
 	mix-blend-mode: difference;
 	z-index: 999;
 	transition: transform 0.2s;
+	opacity: 0;
 }
+
+/* background */
+body { transition: .5s ease; }
+body.bg1 { background: #111; transition: .5s ease; }
