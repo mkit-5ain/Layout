@@ -15,6 +15,8 @@ $(document).ready(function () {
     menuActive();
     mouseControl();
     // sectionBg();
+    // areaMouseMove();
+    mouseTtransition();
 });
 
 function imageCache () {
@@ -94,29 +96,28 @@ function sectionBg() {
         }
     });
 }
-$(window).scroll(function() {
-    var el = $('.asof').offset().top;
-    var scrollHeight = $(this).scrollTop();
-    if (scrollHeight > el ) {
-        mouseTtransition();
-    } else {
+function areaMouseMove() {
+    $(window).scroll(function() {
+        var scrollTop = $(window).scrollTop();
+        var eleHeight = $('.asof').outerHeight();
+        var eleArea = ($('.asof').offset().top.toFixed());
+        var eleValue =  (Number(eleHeight) + Number(eleArea));
+        var eleTotalHeight = eleValue - $(window).height();
+        if (scrollTop >= eleArea ) {
+            mouseTtransition();
+        }
+    });
+}
 
-    }
-    // if ($(this).scrollTop() >= Math.ceil($('.asof').offset().top)) {
-    //
-    // } else {
-    //
-    // }
-});
 function mouseTtransition () {
-    $(document).on("mousemove", function(e) {
+    $('.asof').on("mousemove", function(e) {
         var window_height = $(this).height();
         var window_width = $(this).width();
         var mouseXpos = e.pageX;
         var mouseYpos = e.pageY;
-        var X = (window_width / 2 - mouseXpos) * 0.05;
-        var Y = (window_height / 2 - mouseYpos) * 0.05;
-        $(".transform-section img").css(
+        var X = (window_width / 2 - mouseXpos) * 0.02;
+        var Y = (window_height / 2 - mouseYpos) * 0.02;
+        $(".asof__preview--img img").css(
             "transform", "translateX(" + X + "px) translateY(" + Y + "px)"
         );
     });
