@@ -1,15 +1,4 @@
 $(document).ready(function () {
-    console.log(`%c
-    __        ______  __       __           _____  __    __  __    __  ________         ______   __    __
-    /  |      /      |/  \     /  |         /     |/  |  /  |/  \  /  |/        |       /      \ /  |  /  |
-    $$ |      $$$$$$/ $$  \   /$$ |         $$$$$ |$$ |  $$ |$$  \ $$ |$$$$$$$$/       /$$$$$$  |$$ |  $$ |
-    $$ |        $$ |  $$$  \ /$$$ |            $$ |$$ |  $$ |$$$  \$$ |$$ |__          $$ \__$$/ $$ |  $$ |
-    $$ |        $$ |  $$$$  /$$$$ |       __   $$ |$$ |  $$ |$$$$  $$ |$$    |         $$      \ $$ |  $$ |
-    $$ |        $$ |  $$ $$ $$/$$ |      /  |  $$ |$$ |  $$ |$$ $$ $$ |$$$$$/           $$$$$$  |$$ |  $$ |
-    $$ |_____  _$$ |_ $$ |$$$/ $$ |      $$ \__$$ |$$ \__$$ |$$ |$$$$ |$$ |_____       /  \__$$ |$$ \__$$ |
-    $$       |/ $$   |$$ | $/  $$ |      $$    $$/ $$    $$/ $$ | $$$ |$$       |      $$    $$/ $$    $$/
-    $$$$$$$$/ $$$$$$/ $$/      $$/        $$$$$$/   $$$$$$/  $$/   $$/ $$$$$$$$/        $$$$$$/   $$$$$$/
-    `, "color:#028a58")
     imageCache();
     scrollFadeInOut();
     menuActive();
@@ -17,6 +6,7 @@ $(document).ready(function () {
     // sectionBg();
     // areaMouseMove();
     mouseTtransition();
+    viewLeftRight();
 });
 
 function imageCache () {
@@ -115,10 +105,18 @@ function mouseTtransition () {
         var window_width = $(this).width();
         var mouseXpos = e.pageX;
         var mouseYpos = e.pageY;
-        var X = (window_width / 2 - mouseXpos) * 0.02;
-        var Y = (window_height / 2 - mouseYpos) * 0.02;
+        var X = (window_width - mouseXpos) * 0.02;
+        var Y = (window_height - mouseYpos) * 0.02;
         $(".asof__preview--img img").css(
             "transform", "translateX(" + X + "px) translateY(" + Y + "px)"
         );
     });
+}
+
+function viewLeftRight () {
+    var viewWidth = $(window).width() / 2;
+    var viewHeight = $(window).height() / 2;
+
+    console.log(viewWidth);
+    console.log(viewHeight.toFixed());
 }
