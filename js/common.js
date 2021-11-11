@@ -29,8 +29,8 @@ function scrollFadeInOut() {
 }
 
 function menuActive() {
-    $('.menu-btn').click(function () {
-        $('.menu-view').toggleClass('active');
+    $('.menu--btn').click(function () {
+        $('.menu--view').toggleClass('active');
     });
 }
 
@@ -101,14 +101,22 @@ function areaMouseMove() {
 
 function mouseTtransition () {
     $('.asof').on("mousemove", function(e) {
-        var window_height = $(this).height();
         var window_width = $(this).width();
+        var window_height = $(this).height();
         var mouseXpos = e.pageX;
         var mouseYpos = e.pageY;
         var X = (window_width - mouseXpos) * 0.02;
         var Y = (window_height - mouseYpos) * 0.02;
         $(".asof__preview--img img").css(
             "transform", "translateX(" + X + "px) translateY(" + Y + "px)"
+        );
+
+        $(".asof__preview--top_text").css(
+            "transform", "translateX(" + X * 4 + "px) translateY(" + Y *4 + "px)"
+        );
+
+        $(".asof__preview--bottom_text").css(
+            "transform", "translateX(" + -X + "px) translateY(" + -Y + "px)"
         );
     });
 }
@@ -119,4 +127,16 @@ function viewLeftRight () {
 
     console.log(viewWidth);
     console.log(viewHeight.toFixed());
+}
+
+function scrollTest() {
+    var sdegree = 0;
+
+    $(window).scroll(function() {
+        sdegree ++ ;
+        sdegree = sdegree + 2 ;
+        var srotate = "rotate(" + sdegree + "deg)";
+        $("img").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
+    });
+
 }
