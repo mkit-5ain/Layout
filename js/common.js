@@ -138,5 +138,4 @@ function scrollTest() {
         var srotate = "rotate(" + sdegree + "deg)";
         $("img").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
     });
-
 }
