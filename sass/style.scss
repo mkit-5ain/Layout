@@ -44,6 +44,12 @@ $item-font-size: 10vw;
 	align-items: center;
 }
 
+@mixin between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
 @mixin box-sizing($css-selector) {
     box-sizing:border-box;
     -webkit-box-sizing:border-box;
