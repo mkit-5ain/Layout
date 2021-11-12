@@ -89,6 +89,7 @@
 .footer {
     position: relative;
     min-height: 500px;
+    padding: 4vw 10vw 0;
     margin-top: 250px;
     background: #111;
     &:after {
@@ -100,6 +101,16 @@
         height: 66px;
         background: url('../image/common/footer_bg.png') 0 0 no-repeat;
         background-size: cover;
+    }
+    .logo { filter: invert(1);}
+    .my__info {
+        padding-top: 50px;
+        .info--text {
+            .title { font-weight: bold; }
+            span {
+                font-size: 12px; color: #fff;
+            }
+        }
     }
 }
 .prologue {
