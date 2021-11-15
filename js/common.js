@@ -13,7 +13,7 @@ $.getJSON('../data/data.json', function(data) {
     for(key in data){
         $('.work').append(`
             <div class="work__list">
-                <a class="work__list--link" href="${data[key].href}">${data[key].title}</a>
+                <a class="work__list--link link" href="${data[key].href}">${data[key].title}</a>
                 <img class="work__list--img" src="${data[key].url}" alt="${data[key].title}"/>
                 <div class="work__list--marquee">
                     <div class="marquee--text">
