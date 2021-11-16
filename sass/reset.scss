@@ -1,7 +1,7 @@
 body,a, * { cursor: none!important; }
 body {
     font-family: $futura;
-    background-color: #f0ede6;
+    background-color: $bg-color;
     // cursor: url('../image/icon/cursor.svg'), auto;
     &::-webkit-scrollbar {
         display: none;

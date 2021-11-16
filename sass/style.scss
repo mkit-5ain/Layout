@@ -66,6 +66,7 @@ $white-color: #fff;
 $black-color: #111;
 $primary-color: #0036ff;
 $second-color: #ddbe9f;
+$bg-color: #f0ede6;
 
 $size-s :14px;
 $size-m :18px;
@@ -241,7 +242,6 @@ $item-font-size: 10vw;
 	&:hover::before {
 		text-shadow: 1px 1px #000;
 		box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
-		background: linear-gradient(45deg, #0a4bf9, #2e9ae2);
 	}
 
 	&::after {

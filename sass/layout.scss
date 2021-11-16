@@ -324,19 +324,161 @@
         }
     }
 }
+.clip-svg {
+  clip-path: url(#myClip);
+}
 .noice {
-    position: relative;
     video {
         width: 100%;
+        // clip-path: circle(40% at 20% 50%);
     }
-    .video--dim {
-        content: '';
-        display: block;
+}
+$dark: #111;
+$gold: #a78247;
+$borderwidth: 0.1vw;
+$animationtime: 5s;
+
+@mixin bordered(){
+  border: $borderwidth solid $bg-color;
+}
+
+.mosthearted {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    border: 0;
+    & svg{
+    width: 15vw;
+    height: auto;
+    }
+}
+
+@keyframes icon1moontop {
+  0% {top: 10%;right: 5%;z-index:0;}
+  49% {top: 60%;right: 95%;z-index:0;}
+  50% {top: 60%;right: 95%;z-index:1;}
+  99% {top: 10%;right: 5%;z-index:1;}
+  100% {top: 10%;right: 5%;z-index:0;}
+}
+@keyframes icon1moonbottom {
+  0% {top: 75%;left: 15%;z-index:0;}
+  49% {top: 40%;left: 95%;z-index:0;}
+  50% {top: 40%;left: 95%;z-index:-1;}
+  99% {top: 75%;left: 15%;z-index:-1;}
+  100% {top: 75%;left: 15%;z-index:0;}
+}
+.rotate--circle {
+    position: relative;
+    width: 100%;
+    height: 288px;
+    div {
         position: absolute;
-        top: 0px;
-        left: 0px;
-        z-index: 10;
-        width: 100%;
-        height: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        @include bordered();
+        &:before, &:after {
+            content: '';
+            display: block;
+            position: absolute;
+        }
+    }
+}
+.icon{
+    width: 15vw;
+    height: 15vw;
+    .moon, .planet {
+        border-radius: 50%;
+        background: $dark;
+    }
+
+    &.icon1{
+        & .moon{
+            &.top{
+                top: 10%;
+                right: 5%;
+                width: 12%;
+                height: 12%;
+                animation: icon1moontop $animationtime ease 0s infinite;
+            }
+            &.bottom{
+                top: 75%;
+                left: 15%;
+                width: 8%;
+                height: 8%;
+                animation: icon1moonbottom $animationtime ease 0s infinite;
+            }
+        }
+
+        & .planet{
+          top: 20%;
+          left: 20%;
+          width: 62%;
+          height: 62%;
+          & .line {
+            height: 0.1vw;
+            border-color: $bg-color transparent transparent transparent;
+            overflow: visible;
+            &.line1 {
+                top: 15%;
+                left: 0;
+                width: 60%;
+            }
+            &.line2 {
+                top: 30%;
+                left: 0;
+                width: 20%;
+                &:after{
+                    top: -0.1vw;
+                    left: 140%;
+                    height: 0.1vw;
+                    width: 60%;
+                    @include bordered();
+                    border-color: $bg-color transparent transparent transparent;
+                }
+            }
+            &.line3{
+              top: 38%;
+              right: 0;
+              width: 40%;
+            }
+            &.line4{
+              top: 48%;
+              right: 0;
+              width: 18%;
+            }
+            &.line5{
+              top: 57%;
+              left: 0;
+              width: 30%;
+              &:after{
+                top: -0.1vw;
+                left: 140%;
+                height: 0.1vw;
+                width: 40%;
+                @include bordered();
+                border-color: $bg-color transparent transparent transparent;
+              }
+            }
+            &.line6{
+              top: 68%;
+              left: 0;
+              width: 70%;
+            }
+            &.line7{
+              top: 80%;
+              right: 0;
+              width: 30%;
+              &:after{
+                top: -0.1vw;
+                left: -80%;
+                height: 0.1vw;
+                width: 40%;
+                @include bordered();
+                border-color: $bg-color transparent transparent transparent;
+              }
+            }
+          }
+        }
     }
 }
