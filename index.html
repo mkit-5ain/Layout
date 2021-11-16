@@ -71,9 +71,35 @@
             </div>
         </section>
         <section class="noice">
-            <video src="video/noice.mp4" autoplay="autoplay" muted="muted" loop style="    clip-path: circle(25% at 25% 25%)"></video>
-            <div class="video--dim"></div>
+            <video class="clip-svg" src="video/noice.mp4" autoplay="autoplay" muted="muted" loop></video>
+            <svg width="0" height="0">
+              <defs>
+                <clipPath id="myClip">
+                  <polygon points="400,50 400,320, 140,300"/>
+                  <polygon points="450,10 500,200 600,100" />
+                  <polygon points="150,10 100,200 300,100" />
+                  <polygon points="1000,50 1000,320, 140,900"/>
+                  <polygon points="450,10 500,200 600,100" />
+                  <polygon points="150,10 100,200 300,100" />
+                </clipPath>
+              </defs>
+            </svg>
         </section>
+        <div class="rotate--circle">
+            <div class="icon icon1">
+                <div class="moon top"></div>
+                <div class="planet">
+                    <div class="line line1"></div>
+                    <div class="line line2"></div>
+                    <div class="line line3"></div>
+                    <div class="line line4"></div>
+                    <div class="line line5"></div>
+                    <div class="line line6"></div>
+                    <div class="line line7"></div>
+                </div>
+                <div class="moon bottom"></div>
+            </div>
+        </div>
         <section class="work"></section>
     </main>
     <footer class="footer">
@@ -86,7 +112,7 @@
                 </g>
             </svg>
         </h1>
-        <div class="my__info">
+        <!-- <div class="my__info">
             <div class="info--text">
                 <span class="title">만든이</span>
                 <span>임준수</span>
@@ -103,7 +129,7 @@
                 <span class="title">이메일</span>
                 <span>mkit5ain@naver.com</span>
             </div>
-        </div>
+        </div> -->
     </footer>
     <div class="cursor"></div>
 </body>
