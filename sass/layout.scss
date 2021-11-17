@@ -324,17 +324,28 @@
         }
     }
 }
-.clip-svg {
-  clip-path: url(#myClip);
-}
+// .clip-svg {
+//   clip-path: url(#myClip);
+// }
 .noice {
+    position: relative;
     width: 100vw;
-    height: 126.9vw;
-    background: url('../image/common/noice_bg.png') 0 0 no-repeat;
-    background-size: 100%;
-    video {
-        width: 100%;
-        // clip-path: circle(40% at 20% 50%);
+    height: 70vw;
+    margin-bottom: 15vw;
+    background: url('../image/common/noice/noice_bg.png') 0 center no-repeat;
+    background-size: cover;
+    &__video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        transform: translate(-50%, -50%);
+        &--text {
+            padding-bottom: 15px;
+            font-size: 60px;
+            color: #fff;
+        }
+        video { width: 100%; }
     }
 }
 $dark: #111;
