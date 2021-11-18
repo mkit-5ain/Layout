@@ -276,7 +276,7 @@
     }
 }
 .asof {
-    padding: 10vw 0px;
+    padding: 10vw 0px 0px;
     .asof__preview {
         @include center;
         width: 100vw;
@@ -327,6 +327,11 @@
 // .clip-svg {
 //   clip-path: url(#myClip);
 // }
+.appeal {
+    margin: 20vw 0px;
+    text-align: center;
+    p { font-size: 150px; }
+}
 .noice {
     position: relative;
     width: 100vw;
