@@ -22,7 +22,15 @@
             opacity: 0;
         }
     }
-    .logo { position: relative; line-height: 0px; transform: translate(0px, 0px); transition: .5s ease; }
+    .logo {
+        position: relative;
+        line-height: 0px;
+        transform: translate(0px, 0px);
+        transition: .5s ease;
+        img {
+            width: 150px;
+        }
+    }
     .menu--btn {
         width: 60px;
         height: 60px;
@@ -197,8 +205,9 @@
         .work__list--link {
         	display: inline-block;
             position: relative;
+            width: 100%;
             line-height: 1.15;
-        	padding: 0 1vw;
+            border-bottom: 1px solid #111;
             font-family: 'logo';
             font-size: $item-font-size;
         	font-weight: 900;
@@ -215,9 +224,16 @@
             	counter-increment: section;
             	content:  counter(section);
             	position: absolute;
-            	bottom: 60%;
-            	left: 0;
-            	pointer-events: none;
+            	bottom: 0px;
+            	right: 0px;
+                color: transparent;
+                font-size: 80px;
+                font-family: 'logo';
+                pointer-events: none;
+                -webkit-text-stroke: 1.5px #111;
+                text-stroke: 1px #000;
+                -webkit-text-fill-color: transparent;
+                text-fill-color: transparent;
             }
             &:hover {
                 transition-duration: 0.1s;
@@ -246,6 +262,7 @@
             	width: fit-content;
             	display: flex;
             	position: relative;
+                border-bottom: 1px solid #111;
             	transform: translate3d($move-initial, 0, 0);
             	animation: text-marquee 5s linear infinite;
             	animation-play-state: paused;
@@ -330,13 +347,22 @@
 .appeal {
     margin: 20vw 0px;
     text-align: center;
-    p { font-size: 150px; }
+    &--text {
+        color: #111;
+        font-size: 8.2vw;
+        font-family: 'logo';
+        .appeal-image {
+            width: 5.9vw;
+            padding: 0px 10px;
+            vertical-align: baseline;
+        }
+    }
 }
 .noice {
     position: relative;
     width: 100vw;
     height: 70vw;
-    margin-bottom: 15vw;
+    margin: 0px 0px 15vw 15vw;
     background: url('../image/common/noice/noice_bg.png') 0 center no-repeat;
     background-size: cover;
     &__video {
