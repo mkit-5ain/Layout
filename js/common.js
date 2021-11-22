@@ -45,6 +45,13 @@ function scrollFadeInOut() {
             $('header').removeClass('scroll-active');
         }
         position = scroll;
+
+        if ( scroll == 0 ) {
+            $('header').addClass('zero');
+        } else {
+            $('header').removeClass('zero');
+        }
+
     });
 }
 
