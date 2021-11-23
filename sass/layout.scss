@@ -1,14 +1,21 @@
 .header {
-    @include between;
+    @include end;
     position: fixed;
     top: 0px;
     left: 0px;
     width: calc(100% - 4vw);
     padding: 2vw;
     text-align: center;
-    overflow: hidden;
     transition: .5s ease;
     z-index: 10;
+    &.zero {
+        .logo {
+            top: 8vw;
+            left: 0;
+            width: 100vw;
+            transform: translate(0%, 0vw);
+        }
+    }
     &.scroll-active {
         pointer-events: none;
         .logo {
@@ -23,12 +30,17 @@
         }
     }
     .logo {
-        position: relative;
+        position: absolute;
+        top: 3vw;
+        left: 2vw;
+        width: 8vw;
         line-height: 0px;
         transform: translate(0px, 0px);
         transition: .5s ease;
         img {
-            width: 150px;
+            transform-origin: left top;
+            transition: transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
+            transform: translate3d(0 px , 0 px , 0 px ) scale(1);
         }
     }
     .menu--btn {
@@ -122,7 +134,7 @@
     }
 }
 .prologue {
-    padding: 14vw 0px;
+    padding: 43vw 0px;
     overflow: hidden;
     &--text {
         position: relative;

@@ -102,6 +102,11 @@ $item-font-size: 10vw;
 	align-items: center;
 }
 
+@mixin end {
+	display: flex;
+	justify-content: end;
+}
+
 @mixin box-sizing($css-selector) {
     box-sizing:border-box;
     -webkit-box-sizing:border-box;
