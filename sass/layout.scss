@@ -31,7 +31,7 @@
     }
     .logo {
         position: absolute;
-        top: 3vw;
+        top: 2.25vw;
         left: 2vw;
         width: 8vw;
         line-height: 0px;
@@ -41,6 +41,18 @@
             transform-origin: left top;
             transition: transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0s;
             transform: translate3d(0 px , 0 px , 0 px ) scale(1);
+        }
+    }
+    .menu__list {
+        @include center;
+        width: 100%;
+        padding-left: 30px;
+        .list {
+            padding: 0 10px;
+            a {
+                font-size: 18px;
+                font-weight: 500;
+            }
         }
     }
     .menu--btn {
@@ -106,6 +118,24 @@
         }
     }
 }
+.top__banner {
+    position: relative;
+    .banner {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        object-position: center center;
+    }
+    .banner--text {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        z-index: 1;
+        font-size: 40px;
+        font-weight: 500;
+        transform: translate(-50%, 0%);
+    }
+}
 .footer {
     position: relative;
     min-height: 500px;
@@ -134,7 +164,7 @@
     }
 }
 .prologue {
-    padding: 43vw 0px;
+    margin: 100vw 0px;
     overflow: hidden;
     &--text {
         position: relative;
@@ -239,7 +269,7 @@
             	bottom: 0px;
             	right: 0px;
                 color: transparent;
-                font-size: 80px;
+                font-size: 30px;
                 font-family: 'logo';
                 pointer-events: none;
                 -webkit-text-stroke: 1.5px #111;
@@ -332,7 +362,7 @@
             position: absolute;
             top: 0px;
             left: 36%;
-            z-index: -1;
+            z-index: 10;
             font-size: 250px;
             color: #0036ff;
             font-weight: bold;
@@ -372,7 +402,7 @@
 }
 .noice {
     position: relative;
-    width: 100vw;
+    width: calc(100vw - 15vw);
     height: 70vw;
     margin: 0px 0px 15vw 15vw;
     background: url('../image/common/noice/noice_bg.png') 0 center no-repeat;
