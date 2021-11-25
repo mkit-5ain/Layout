@@ -8,6 +8,13 @@ $(document).ready(function () {
     scrollTransition();
 });
 
+$(window).on('load', function () {
+    $('body').css({
+        'opacity':'1'
+    });
+});
+
+
 $.getJSON('../data/data.json', function(data) {
     for(key in data){
         $('.work').append(`
@@ -122,7 +129,7 @@ function mouseTtransition () {
         var X = (window_width - mouseXpos) * 0.02;
         var Y = (window_height - mouseYpos) * 0.02;
         $(".asof__preview--img img").css(
-            "transform", "translateX(" + X + "px) translateY(" + Y + "px)"
+            "transform", "translate3d(" + -X + "px," + -Y + "px, 0)"
         );
     });
 }
@@ -158,21 +165,16 @@ function scrollTransition() {
        topBanner('.asof--text');
     });
 }
+
 function contentsFade (name) {
     $(window).scroll(function () {
         $(name).each(function () {
             var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            var bottom_of_window = $(window).scrollTop() + $(window).height() + 400;
             var scroll = $(window).scrollTop();
 
             if ( bottom_of_window > bottom_of_object ) {
                 $(this).addClass('active');
-            } else if ( bottom_of_window < bottom_of_object ) {
-                $(this).removeClass('active');
-            }
-
-            if ( scroll > bottom_of_object ) {
-                $(this).removeClass('active');
             }
         });
     });
