@@ -120,6 +120,8 @@
 }
 .top__banner {
     position: relative;
+    height: 78vw;
+    overflow: hidden;
     .banner {
         width: 100%;
         height: 100vh;
@@ -128,12 +130,28 @@
     }
     .banner--text {
         position: absolute;
-        bottom: 10%;
+        bottom: 48vw;
         left: 50%;
         z-index: 1;
         font-size: 40px;
         font-weight: 500;
         transform: translate(-50%, 0%);
+    }
+    .banner__marquee--text {
+        display: flex;
+        position: absolute;
+        bottom: 84%;
+        left: -14vw;
+        background: #0036ff;
+        animation: banne-marquee 5s linear infinite;
+        .text {
+            width: fit-content;
+            font-size: 10vw;
+            font-weight: 900;
+            font-family: 'logo';
+            font-style: italic;
+            white-space: nowrap;
+        }
     }
 }
 .footer {
@@ -164,8 +182,20 @@
     }
 }
 .prologue {
-    margin: 100vw 0px;
+    margin: 30vw 0px;
     overflow: hidden;
+    &.active {
+        &--text {
+            animation: 0.8s introTextAnimation forwards;
+            &.effect-dot {
+                .inner-dot {
+                    animation: 1.5s dotAnimation forwards;
+                }
+            }
+            &.effect-blur { animation-delay: 0.4s; }
+            &.effect-line { animation-delay: 0.2s; }
+        }
+    }
     &--text {
         position: relative;
         height: 270px;
@@ -176,7 +206,6 @@
         letter-spacing: 15px;
         text-transform: uppercase;
         transition: 1s cubic-bezier(0.74, 0.51, 0.51, 1.26);
-        animation: 0.8s introTextAnimation forwards;
         opacity: 0;
         text-shadow: 1px 1px 5px #111;
         &.effect-dot { width: 960px;
@@ -188,15 +217,13 @@
                 height: 70px;
                 border-radius: 100%;
                 background: $primary-color;
-                animation: 1.5s dotAnimation forwards;
                 animation-delay: 1s;
                 transition: 1s cubic-bezier(0.32, 0.18, 0.26, 0.84);
                 opacity: 0;
                 box-shadow: 1px 1px 10px 0px #151414
             }
         }
-        &.effect-blur { animation-delay: 0.4s; }
-        &.effect-line { animation-delay: 0.2s;
+        &.effect-line {
             &:after {
                 content: '';
                 position: absolute;
