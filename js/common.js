@@ -10,6 +10,7 @@ $(document).ready(function () {
 
 $(window).on('load',function () {
     bannerTextClass();
+    $('body').show();
 });
 
 $.getJSON('../data/data.json', function(data) {
