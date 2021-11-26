@@ -8,12 +8,9 @@ $(document).ready(function () {
     scrollTransition();
 });
 
-$(window).on('load', function () {
-    $('body').css({
-        'opacity':'1'
-    });
+$(window).on('load',function () {
+    bannerTextClass();
 });
-
 
 $.getJSON('../data/data.json', function(data) {
     for(key in data){
@@ -79,7 +76,7 @@ function mouseControl () {
 
     $(window).mouseleave(function() {
         cursor.css({
-            opacity: "0"
+            opacity: "1"
         });
     }).mouseenter(function() {
         cursor.css({
@@ -170,7 +167,7 @@ function contentsFade (name) {
     $(window).scroll(function () {
         $(name).each(function () {
             var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height() + 400;
+            var bottom_of_window = $(window).scrollTop() + $(window).height() + 420;
             var scroll = $(window).scrollTop();
 
             if ( bottom_of_window > bottom_of_object ) {
@@ -179,4 +176,8 @@ function contentsFade (name) {
         });
     });
 }
-contentsFade('.prologue');
+contentsFade('.prologue, .appeal, .video');
+
+function bannerTextClass() {
+    $('.banner--text').addClass('active');
+}
