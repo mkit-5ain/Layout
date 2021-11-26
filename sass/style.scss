@@ -205,8 +205,8 @@ $item-font-size: 10vw;
 	}
 }
 
-/* 텍스트 애니메이션*/
-@keyframes banne-marquee {
+/* 상단 배너 텍스트 애니메이션 1 */
+@keyframes banner-marquee-01 {
 	0% {
 		transform: rotate(-20deg) translate3d($move-initial, 0, 0);
 	}
@@ -271,4 +271,4 @@ $item-font-size: 10vw;
 	}
 }
 /* background */
-body.bg1 { background: #111; transition: .5s ease; }
+// body.bg1 { background: #111; transition: .5s ease; }

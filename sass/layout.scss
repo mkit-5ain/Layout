@@ -136,6 +136,37 @@
         font-size: 40px;
         font-weight: 500;
         transform: translate(-50%, 0%);
+        .text {
+            .text--inner {
+                transform: translate3d(0px, 70px, 0px);
+            }
+        }
+        &.active {
+            .text {
+                display: inline-block;
+                overflow: hidden;
+                .text--inner {
+                    display: block;
+                    transform: translate3d(0px, 0px, 0px);
+                    transition: .5s ease;
+                }
+                &:nth-child(2){
+                    .text--inner{
+                        transition: 1s ease;
+                    }
+                 }
+                &:nth-child(3){
+                    .text--inner{
+                        transition: 1.5s ease;
+                    }
+                 }
+                &:nth-child(4){
+                    .text--inner{
+                        transition: 2s ease;
+                    }
+                 }
+            }
+        }
     }
     .banner__marquee--text {
         display: flex;
@@ -143,7 +174,10 @@
         bottom: 84%;
         left: -14vw;
         background: #0036ff;
-        animation: banne-marquee 5s linear infinite;
+        animation: banner-marquee-01 6s linear infinite;
+        &.marquee--2 {
+            animation: banner-marquee-02 6s linear infinite;
+        }
         .text {
             width: fit-content;
             font-size: 10vw;
@@ -181,19 +215,44 @@
         }
     }
 }
+.video { position: relative;
+    &.active {
+        video { clip-path: circle(100%); }
+    }
+    video { transition: 1s ease; clip-path: circle(33%); }
+    .video--top--text {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 10;
+        p { font-size: 40px; }
+    }
+    .video--bottom--text {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 10;
+        font-size: 30px;
+    }
+}
 .prologue {
     margin: 30vw 0px;
-    overflow: hidden;
     &.active {
-        &--text {
+        .prologue--text {
             animation: 0.8s introTextAnimation forwards;
-            &.effect-dot {
-                .inner-dot {
-                    animation: 1.5s dotAnimation forwards;
+            &.effect-blur { animation-delay: 0.4s; }
+            &.effect-line {
+                animation-delay: 0.2s;
+                &::after {
+                    content: '';
+                    animation: 0.5s TopBottomAnimation forwards;
+                    animation-delay: 2s;
                 }
             }
-            &.effect-blur { animation-delay: 0.4s; }
-            &.effect-line { animation-delay: 0.2s; }
+            .inner-dot {
+                animation: 1.5s dotAnimation forwards;
+                animation-delay: 1s;
+            }
         }
     }
     &--text {
@@ -217,13 +276,13 @@
                 height: 70px;
                 border-radius: 100%;
                 background: $primary-color;
-                animation-delay: 1s;
                 transition: 1s cubic-bezier(0.32, 0.18, 0.26, 0.84);
                 opacity: 0;
                 box-shadow: 1px 1px 10px 0px #151414
             }
         }
-        &.effect-line {
+        &.effect-blur { animation-delay: 0.4s; }
+        &.effect-line { animation-delay: 0.2s;
             &:after {
                 content: '';
                 position: absolute;
@@ -235,8 +294,6 @@
                 background: rgb(0, 54, 255, 0.8);
                 box-shadow: 1px 1px 1px 0px #151414;
                 transition: 1s ease-in-out;
-                animation: 0.5s TopBottomAnimation forwards;
-                animation-delay: 2s;
                 opacity: 0;
             }
         }
@@ -416,15 +473,16 @@
 .appeal {
     margin: 20vw 0px;
     text-align: center;
-    &--text {
+    .appeal--text {
         color: #111;
         font-size: 8.2vw;
         font-family: 'logo';
-        .appeal-image {
+        .appeal--image {
             width: 5.9vw;
             padding: 0px 10px;
             vertical-align: baseline;
         }
+        span { display: inline-block; }
     }
 }
 .noice {
