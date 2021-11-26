@@ -175,6 +175,9 @@
         left: -14vw;
         background: #0036ff;
         animation: banner-marquee-01 6s linear infinite;
+        &:hover {
+            animation-play-state: paused;
+        }
         &.marquee--2 {
             animation: banner-marquee-02 6s linear infinite;
         }
@@ -215,28 +218,53 @@
         }
     }
 }
-.video { position: relative;
+.video {
+    position: relative;
     &.active {
         video { clip-path: circle(100%); }
+        .video--top--text {
+            p {
+                span {
+                    display: block;
+                    letter-spacing: -8px;
+                    transition: .5s ease;
+                    transform: translate(0px, 0px);
+                    opacity: 1;
+                }
+            }
+        }
     }
     video { transition: 1s ease; clip-path: circle(33%); }
     .video--top--text {
         position: absolute;
-        top: 0px;
-        left: 0px;
+        top: -7vw;
+        right: 5vw;
         z-index: 10;
-        p { font-size: 40px; }
+        p {
+            line-height: 86px;
+            font-size: 100px;
+            font-family: 'logo';
+            letter-spacing: -8px;
+            overflow: hidden;
+            span {
+                padding: 0px 10px;
+                transform: translate(0px, 85px);
+                opacity: 0;
+            }
+        }
     }
     .video--bottom--text {
         position: absolute;
-        top: 0px;
-        left: 0px;
+        bottom: -1.5vw;
+        left: 1.4vw;
         z-index: 10;
-        font-size: 30px;
+        line-height: 86px;
+        font-size: 100px;
+        font-family: 'logo';
+        letter-spacing: -8px;
     }
 }
 .prologue {
-    margin: 30vw 0px;
     &.active {
         .prologue--text {
             animation: 0.8s introTextAnimation forwards;
@@ -303,7 +331,7 @@
     position: relative;
     width: 200px;
     height: 100px;
-    margin: 300px auto;
+    margin: 500px auto;
     border-radius: 50px;
     box-shadow: 20px 20px 60px #ccc9c4, -20px -20px 60px #ffffff;
     &--circle {
@@ -425,7 +453,6 @@
         width: 100vw;
         height: 100vh;
         position: relative;
-        z-index: -2;
         .asof__preview--img {
             display: inherit;
             width: calc(100vw - 26px);
@@ -483,27 +510,6 @@
             vertical-align: baseline;
         }
         span { display: inline-block; }
-    }
-}
-.noice {
-    position: relative;
-    width: calc(100vw - 15vw);
-    height: 70vw;
-    margin: 0px 0px 15vw 15vw;
-    background: url('../image/common/noice/noice_bg.png') 0 center no-repeat;
-    background-size: cover;
-    &__video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 50%;
-        transform: translate(-50%, -50%);
-        &--text {
-            padding-bottom: 15px;
-            font-size: 60px;
-            color: #fff;
-        }
-        video { width: 100%; }
     }
 }
 $dark: #111;
