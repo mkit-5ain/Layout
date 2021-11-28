@@ -221,7 +221,7 @@
 .video {
     position: relative;
     &.active {
-        video { clip-path: circle(100%); }
+        video { width: 100%; clip-path: circle(100%); }
         .video--top--text {
             p {
                 span {
