@@ -6,6 +6,7 @@ $(document).ready(function () {
     // sectionBg();
     mouseTtransition();
     scrollTransition();
+    contentsFade('.prologue, .appeal, .video, .slowglow');
 });
 
 $(window).on('load',function () {
@@ -177,8 +178,13 @@ function contentsFade (name) {
         });
     });
 }
-contentsFade('.prologue, .appeal, .video');
 
 function bannerTextClass() {
     $('.banner--text').addClass('active');
 }
+
+
+    setTimeout(function () {
+        var video = $(".slowglow.active video").get(0);
+        video.play();
+    }, 100);
