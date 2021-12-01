@@ -175,9 +175,6 @@
         left: -14vw;
         background: #0036ff;
         animation: banner-marquee-01 6s linear infinite;
-        &:hover {
-            animation-play-state: paused;
-        }
         &.marquee--2 {
             animation: banner-marquee-02 6s linear infinite;
         }
@@ -264,7 +261,7 @@
         letter-spacing: -8px;
     }
 }
-.prologue {
+.prologue { margin-top: 30vw;
     &.active {
         .prologue--text {
             animation: 0.8s introTextAnimation forwards;
@@ -327,11 +324,18 @@
         }
     }
 }
+.slowglow { position: relative; margin-top: 30vw;
+    video { width: 100%; }
+    .slowglow__logo { width: 140px;  position: absolute;
+        &.black { top: 3vw; left: 3vw;}
+        &.white { bottom: 3vw; right: 3vw; filter: invert(1); }
+    }
+}
 .loading {
     position: relative;
     width: 200px;
     height: 100px;
-    margin: 500px auto;
+    margin: 30vw auto 0px;
     border-radius: 50px;
     box-shadow: 20px 20px 60px #ccc9c4, -20px -20px 60px #ffffff;
     &--circle {
@@ -497,9 +501,7 @@
 // .clip-svg {
 //   clip-path: url(#myClip);
 // }
-.appeal {
-    margin: 20vw 0px;
-    text-align: center;
+.appeal { margin-top: 30vw; text-align: center;
     .appeal--text {
         color: #111;
         font-size: 8.2vw;
@@ -515,37 +517,28 @@
 $dark: #111;
 $gold: #a78247;
 $borderwidth: 0.1vw;
-$animationtime: 5s;
+$animationtime: 4s;
 
 @mixin bordered(){
   border: $borderwidth solid $bg-color;
 }
 
-.mosthearted {
-    position: fixed;
-    bottom: 1em;
-    right: 1em;
-    border: 0;
-    & svg{
-    width: 15vw;
-    height: auto;
-    }
+@keyframes icon1moontop {
+    0% { top: 10%; right: 5%; z-index:0; }
+    49% { top: 60%; right: 95%; z-index:0; }
+    50% { top: 60%; right: 95%; z-index:1; }
+    99% { top: 10%; right: 5%; z-index:1; }
+    100% { top: 10%; right: 5%; z-index:0; }
 }
 
-@keyframes icon1moontop {
-  0% {top: 10%;right: 5%;z-index:0;}
-  49% {top: 60%;right: 95%;z-index:0;}
-  50% {top: 60%;right: 95%;z-index:1;}
-  99% {top: 10%;right: 5%;z-index:1;}
-  100% {top: 10%;right: 5%;z-index:0;}
-}
 @keyframes icon1moonbottom {
-  0% {top: 75%;left: 15%;z-index:0;}
-  49% {top: 40%;left: 95%;z-index:0;}
-  50% {top: 40%;left: 95%;z-index:-1;}
-  99% {top: 75%;left: 15%;z-index:-1;}
-  100% {top: 75%;left: 15%;z-index:0;}
+    0% { top: 75%; left: 15%; z-index: 0; }
+    49% { top: 40%; left: 95%; z-index: 0; }
+    50% { top: 40%; left: 95%; z-index: -1; }
+    99% { top: 75%; left: 15%; z-index: -1; }
+    100% { top: 75%; left: 15%; z-index: 0; }
 }
+
 .rotate--circle {
     position: relative;
     display: flex;
@@ -553,6 +546,7 @@ $animationtime: 5s;
     height: 750px;
     align-items: center;
     justify-content: center;
+    .icon { border: 0px; }
     div {
         position: absolute;
         box-sizing: border-box;
@@ -566,101 +560,70 @@ $animationtime: 5s;
         }
     }
 }
-.icon{
+
+.icon {
     width: 15vw;
     height: 15vw;
     .moon, .planet {
         border-radius: 50%;
         background: $dark;
     }
-
-    &.icon1{
-        & .moon{
-            &.top{
-                top: 10%;
-                right: 5%;
-                width: 12%;
-                height: 12%;
-                animation: icon1moontop $animationtime ease 0s infinite;
-            }
-            &.bottom{
-                top: 75%;
-                left: 15%;
-                width: 8%;
-                height: 8%;
-                animation: icon1moonbottom $animationtime ease 0s infinite;
-            }
+    .moon {
+        &.top {
+            top: 10%;
+            right: 5%;
+            width: 12%;
+            height: 12%;
+            animation: icon1moontop $animationtime ease 0s infinite;
         }
+        &.bottom {
+            top: 75%;
+            left: 15%;
+            width: 8%;
+            height: 8%;
+            animation: icon1moonbottom $animationtime ease 0s infinite;
+        }
+    }
 
-        & .planet{
-          top: 20%;
-          left: 20%;
-          width: 62%;
-          height: 62%;
-          & .line {
+    .planet { top: 20%; left: 20%; width: 62%; height: 62%;
+        .line {
             height: 0.1vw;
             border-color: $bg-color transparent transparent transparent;
             overflow: visible;
-            &.line1 {
-                top: 15%;
-                left: 0;
+        }
+        .line1 { top: 15%; left: 0; width: 60%; }
+        .line2 { top: 30%; left: 0; width: 20%;
+            &:after {
+                top: -0.1vw;
+                left: 140%;
+                height: 0.1vw;
                 width: 60%;
+                @include bordered();
+                border-color: $bg-color transparent transparent transparent;
             }
-            &.line2 {
-                top: 30%;
-                left: 0;
-                width: 20%;
-                &:after{
-                    top: -0.1vw;
-                    left: 140%;
-                    height: 0.1vw;
-                    width: 60%;
-                    @include bordered();
-                    border-color: $bg-color transparent transparent transparent;
-                }
-            }
-            &.line3{
-              top: 38%;
-              right: 0;
-              width: 40%;
-            }
-            &.line4{
-              top: 48%;
-              right: 0;
-              width: 18%;
-            }
-            &.line5{
-              top: 57%;
-              left: 0;
-              width: 30%;
-              &:after{
+        }
+        .line3 { top: 38%; right: 0; width: 40%; }
+        .line4 { top: 48%; right: 0; width: 18%; }
+        .line5 { top: 57%; left: 0; width: 30%;
+            &:after {
                 top: -0.1vw;
                 left: 140%;
                 height: 0.1vw;
                 width: 40%;
                 @include bordered();
                 border-color: $bg-color transparent transparent transparent;
-              }
             }
-            &.line6{
-              top: 68%;
-              left: 0;
-              width: 70%;
-            }
-            &.line7{
-              top: 80%;
-              right: 0;
-              width: 30%;
-              &:after{
+        }
+        .line6 { top: 68%; left: 0; width: 70%; }
+        .line7 { top: 80%; right: 0; width: 30%;
+            &:after {
                 top: -0.1vw;
                 left: -80%;
                 height: 0.1vw;
                 width: 40%;
                 @include bordered();
                 border-color: $bg-color transparent transparent transparent;
-              }
             }
-          }
         }
     }
 }
