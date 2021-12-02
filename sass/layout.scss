@@ -9,25 +9,11 @@
     transition: .5s ease;
     z-index: 10;
     &.zero {
-        .logo {
-            top: 8vw;
-            left: 0;
-            width: 100vw;
-            transform: translate(0%, 0vw);
-        }
+        .logo { top: 8vw; left: 0; width: 100vw; transform: translate(0%, 0vw); }
     }
-    &.scroll-active {
-        pointer-events: none;
-        .logo {
-            transform: translate(-90px, 0px);
-            transition: .5s ease;
-            opacity: 0;
-        }
-        .menu--btn {
-            transition: .5s ease;
-            transform: translate(90px, 0px);
-            opacity: 0;
-        }
+    &.scroll-active { pointer-events: none;
+        .logo { transform: translate(-90px, 0px); transition: .5s ease; opacity: 0; }
+        .menu--btn { transition: .5s ease; transform: translate(90px, 0px); opacity: 0; }
     }
     .logo {
         position: absolute;
@@ -43,16 +29,9 @@
             transform: translate3d(0 px , 0 px , 0 px ) scale(1);
         }
     }
-    .menu__list {
-        @include center;
-        width: 100%;
-        padding-left: 30px;
-        .list {
-            padding: 0 10px;
-            a {
-                font-size: 18px;
-                font-weight: 500;
-            }
+    .menu__list { @include center; width: 100%; padding-left: 30px;
+        .list { padding: 0 10px;
+            a { font-size: 18px; font-weight: 500; }
         }
     }
     .menu--btn {
@@ -118,16 +97,8 @@
         }
     }
 }
-.top__banner {
-    position: relative;
-    height: 78vw;
-    overflow: hidden;
-    .banner {
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
-        object-position: center center;
-    }
+.top__banner { position: relative; height: 78vw; overflow: hi den;
+    .banner { width: 100%; height: 100vh; object-fit: cover; object-position: center center; }
     .banner--text {
         position: absolute;
         bottom: 48vw;
@@ -142,14 +113,8 @@
             }
         }
         &.active {
-            .text {
-                display: inline-block;
-                overflow: hidden;
-                .text--inner {
-                    display: block;
-                    transform: translate3d(0px, 0px, 0px);
-                    transition: .5s ease;
-                }
+            .text { display: inline-block; overflow: hidden;
+                .text--inner { display: block; transform: translate3d(0px, 0px, 0px); transition: .5s ease; }
                 &:nth-child(2){
                     .text--inner{
                         transition: 1s ease;
@@ -175,9 +140,7 @@
         left: -14vw;
         background: #0036ff;
         animation: banner-marquee-01 6s linear infinite;
-        &.marquee--2 {
-            animation: banner-marquee-02 6s linear infinite;
-        }
+        &.marquee--2 { animation: banner-marquee-02 6s linear infinite; }
         .text {
             width: fit-content;
             font-size: 10vw;
@@ -205,13 +168,10 @@
         background-size: cover;
     }
     .logo { filter: invert(1);}
-    .my__info {
-        padding-top: 50px;
+    .my__info { padding-top: 50px;
         .info--text {
             .title { font-weight: bold; }
-            span {
-                font-size: 12px; color: #fff;
-            }
+            span { font-size: 12px; color: #fff; }
         }
     }
 }
@@ -232,21 +192,14 @@
         }
     }
     video { transition: 1s ease; clip-path: circle(33%); }
-    .video--top--text {
-        position: absolute;
-        top: -7vw;
-        right: 5vw;
-        z-index: 10;
+    .video--top--text { position: absolute; top: -7vw; right: 5vw; z-index: 10;
         p {
             line-height: 86px;
             font-size: 100px;
             font-family: 'logo';
             letter-spacing: -8px;
             overflow: hidden;
-            span {
-                padding: 0px 10px;
-                transform: translate(0px, 85px);
-                opacity: 0;
+            span { padding: 0px 10px; transform: translate(0px, 85px); opacity: 0;
             }
         }
     }
@@ -266,18 +219,10 @@
         .prologue--text {
             animation: 0.8s introTextAnimation forwards;
             &.effect-blur { animation-delay: 0.4s; }
-            &.effect-line {
-                animation-delay: 0.2s;
-                &::after {
-                    content: '';
-                    animation: 0.5s TopBottomAnimation forwards;
-                    animation-delay: 2s;
-                }
+            &.effect-line { animation-delay: 0.2s;
+                &::after { content: ''; animation: 0.5s TopBottomAnimation forwards; animation-delay: 2s; }
             }
-            .inner-dot {
-                animation: 1.5s dotAnimation forwards;
-                animation-delay: 1s;
-            }
+            .inner-dot { animation: 1.5s dotAnimation forwards; animation-delay: 1s; }
         }
     }
     &--text {
@@ -354,12 +299,8 @@
         &:nth-child(3) { left: auto; right: 20%; animation-delay: 0.5s; }
     }
 }
-.work {
-    counter-reset: section;
-    .work__list {
-    	cursor: default;
-    	position: relative;
-    	padding: 0 5vw;
+.work { counter-reset: section;
+    .work__list { cursor: default; position: relative; padding: 0 5vw;
         .work__list--link {
         	display: inline-block;
             position: relative;
@@ -393,10 +334,7 @@
                 -webkit-text-fill-color: transparent;
                 text-fill-color: transparent;
             }
-            &:hover {
-                transition-duration: 0.1s;
-            	opacity: 0;
-            }
+            &:hover { transition-duration: 0.1s; opacity: 0; }
         }
         .work__list--img {
         	pointer-events: none;
@@ -439,38 +377,17 @@
             }
         }
     }
-    .work__list--link:hover + .work__list--img {
-    	opacity: 1;
-    	transform: translate3d(calc(-100% - 6vw),-30%,0) rotate3d(0,0,1,4deg);
-    	transition: all 0.4s;
-    }
-    .work__list--link:hover ~ .work__list--marquee .marquee--text {
-    	animation-play-state: running;
-    	opacity: 1;
-    	transition-duration: 0.4s;
-    }
+    .work__list--link:hover + .work__list--img { opacity: 1; transform: translate3d(calc(-100% - 6vw),-30%,0) rotate3d(0,0,1,4deg); transition: all 0.4s; }
+    .work__list--link:hover ~ .work__list--marquee .marquee--text { animation-play-state: running; opacity: 1; transition-duration: 0.4s; }
 }
 .asof {
     padding: 10vw 0px 0px;
-    .asof__preview {
-        @include center;
-        width: 100vw;
-        height: 100vh;
-        position: relative;
-        .asof__preview--img {
-            display: inherit;
-            width: calc(100vw - 26px);
-            text-align: center;
-            justify-content: center;
+    .asof__preview { position: relative; @include center; height: 100vh;  width: 100vw;
+        .asof__preview--img { display: inherit; width: calc(100vw - 26px); text-align: center; justify-content: center;
             &:hover {
-                .asof__preview--bottom_text {
-                    transition: .5s ease;
-                    transform: translate(-30px, 30px);
-                }
+                .asof__preview--bottom_text { transition: .5s ease; transform: translate(-30px, 30px); }
             }
-            .image {
-                width: 50%;
-            }
+            .image { width: 50%; }
         }
         .asof__preview--top_text {
             display: inherit;
@@ -502,15 +419,8 @@
 //   clip-path: url(#myClip);
 // }
 .appeal { margin-top: 30vw; text-align: center;
-    .appeal--text {
-        color: #111;
-        font-size: 8.2vw;
-        font-family: 'logo';
-        .appeal--image {
-            width: 5.9vw;
-            padding: 0px 10px;
-            vertical-align: baseline;
-        }
+    .appeal--text { color: #111; font-size: 8.2vw; font-family: 'logo';
+        .appeal--image { width: 5.9vw; padding: 0px 10px; vertical-align: baseline; }
         span { display: inline-block; }
     }
 }
