@@ -1,6 +1,6 @@
 body,a, * { cursor: none!important; }
 body {
-    font-family: $futura;
+    font-family: $font;
     background-color: $bg-color;
     // cursor: url('../image/icon/cursor.svg'), auto;
     &::-webkit-scrollbar {
@@ -12,6 +12,6 @@ ul,li,ol { list-style: none; }
 textarea { padding: 0px; resize: none; }
 img { vertical-align: top; }
 table th { font-weight: normal; }
-a { color: inherit; text-decoration: auto; font-family: $futura; }
+a { color: inherit; text-decoration: auto; font-family: $font; }
 i { font-style: normal; }
-button { background: none; border: 0px; padding: 0px; margin: 0px;  font-family: $futura; }
+button { background: none; border: 0px; padding: 0px; margin: 0px;  font-family: $font; }

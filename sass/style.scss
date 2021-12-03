@@ -10,9 +10,9 @@
 }
 
 @font-face {
-	font-family: 'apple_sd_gothic';
+	font-family: 'font';
 	font-weight: '900';
-	src: local('apple_sd_gothic'),
+	src: local('font'),
 	url('/font/AppleSDGothicNeoH.woff2') format('woff2'),
 	url('/font/AppleSDGothicNeoH.woff') format('woff');
 	unicode-range: U+AC00-D7A3;
@@ -20,9 +20,9 @@
 }
 
 @font-face {
-	font-family: 'apple_sd_gothic';
+	font-family: 'font';
 	font-weight: '800';
-	src: local('apple_sd_gothic'),
+	src: local('font'),
 	url('/font/AppleSDGothicNeoEB.woff2') format('woff2'),
 	url('/font/AppleSDGothicNeoEB.woff') format('woff');
 	unicode-range: U+AC00-D7A3;
@@ -30,9 +30,9 @@
 }
 
 @font-face {
-	font-family: 'apple_sd_gothic';
+	font-family: 'font';
 	font-weight: '700';
-	src: local('apple_sd_gothic'),
+	src: local('font'),
 	url('/font/AppleSDGothicNeoB.woff2') format('woff2'),
 	url('/font/AppleSDGothicNeoB.woff') format('woff');
 	unicode-range: U+AC00-D7A3;
@@ -40,9 +40,9 @@
 }
 
 @font-face {
-	font-family: 'apple_sd_gothic';
+	font-family: 'font';
 	font-weight: '500';
-	src: local('apple_sd_gothic'),
+	src: local('font'),
 	url('/font/AppleSDGothicNeoM.woff2') format('woff2'),
 	url('/font/AppleSDGothicNeoM.woff') format('woff');
 	unicode-range: U+AC00-D7A3;
@@ -50,9 +50,9 @@
 }
 
 @font-face {
-	font-family: 'apple_sd_gothic';
+	font-family: 'font';
 	font-weight: '300';
-	src: local('apple_sd_gothic'),
+	src: local('font'),
 	url('/font/AppleSDGothicNeoL.woff2') format('woff2'),
 	url('/font/AppleSDGothicNeoL.woff') format('woff');
 	unicode-range: U+AC00-D7A3;
@@ -80,7 +80,7 @@ $align-center: center;
 $align-right: right;
 
 $futura-logo: 'logo';
-$futura: "futura-pt",sans-serif;
+$font: "font",sans-serif;
 
 $marquee-width: 100vw;
 $offset: 20vw;
@@ -233,44 +233,3 @@ $item-font-size: 10vw;
 	z-index: 999;
 	transition: transform 0.1s;
 }
-
-/* btn */
-.btn {
-	position: relative;
-	display: inline-block;
-	padding: 1.2em 2em;
-	text-decoration: none;
-	text-align: center;
-	cursor: pointer;
-	user-select: none;
-	color: white;
-
-	&::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		background: linear-gradient(135deg, #0a4bf9, #2e9ae2);
-		border-radius: 4px;
-		transition: box-shadow .5s ease, transform .2s ease;
-		box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-	}
-
-	&:hover::before {
-		text-shadow: 1px 1px #000;
-		box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
-	}
-
-	&::after {
-		position: relative;
-		display: inline-block;
-		content: attr(data-title);
-		transition: transform .2s ease;
-		font-weight: bold;
-		letter-spacing: .01em;
-	}
-}
-/* background */
-// body.bg1 { background: #111; transition: .5s ease; }
