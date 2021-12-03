@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <meta http-equiv="refresh" content="0; url=http://itlab.tistory.com/"></meta> -->
     <title>Document</title>
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="https://use.typekit.net/wfi8qwm.css">
     <script src="js/setting.js"></script>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="js/common.js"></script>
 </head>
 <body>
@@ -99,33 +102,57 @@
                 <span>trust me.</span>
             </div>
         </section>
-        <!-- <section class="asof">
+        <section class="card">
+            <div class="card--image"><img src="image/common/card.jpg" alt=""></div>
+            <div class="card__info--text">
+                <p>ALWAYS IMPROVE,</p>
+                <p>NEVER</p>
+                <p>CHANGE. LET'S</p>
+                <p>NAVIGATE</p>
+                <p>IDENTITY, SET</p>
+                <p>OUR</p>
+                <p>IMAGINATION</p>
+                <p>FREE AND</p>
+                <p>BECOME US AS</p>
+                <p>WE WISH.</p>
+                <div class="inner--text">
+                    <p>As humans, we celebrate beauty as</p>
+                    <p>something unique. We believe self-</p>
+                    <p>expression is about embracing who we are,</p>
+                    <p>letting our imagination run free and our</p>
+                    <p>true colors shine through.</p>
+                </div>
+            </div>
+        </section>
+        <section class="slowglow">
+            <div class="slowglow__left--image">
+                <div class="image"><img src="image/common/etc-01.jpg" alt=""></div>
+                <div class="image"><img src="image/common/etc-02.jpg" alt=""></div>
+
+            </div>
+            <div class="slowglow__right--image">
+                <video src="video/slowglow.mp4" autoplay="autoplay" muted="muted" loop></video>
+                <div class="image"><img src="image/common/etc-03.jpg" alt=""></div>
+            </div>
+        </section>
+        <section class="asof">
             <div class="asof__preview">
                 <div class="asof__preview--img"><img class="image" src="/image/common/asof_kill_the_duck.png" alt=""></div>
                 <div class="asof__preview--top_text asof--text"><img src="image/common/dropout.png" alt="asof"></div>
                 <div class="asof__preview--bottom_text asof--text"><img src="image/common/asof.png" alt="asof"></div>
-            </div>
-            <div class="asof__info">
-                <div class="info--title">TITLE</div>
-                <div class="info--discription">
-                    <p>내용</p>
+                <div class="general--btn">
+                    <p class="btn--text">안녕하세요 감사해요 <br> 잘있어요 또 다시 만나요</p>
                 </div>
-                <a class="btn" href="" data-title="Learn more"></a>
             </div>
-        </section> -->
-        <section class="slowglow">
-            <video src="video/slowglow.mp4" muted="muted"></video>
-            <img class="slowglow__logo black" src="image/common/slowglow/slowglow_logo.svg" alt="slowglow">
-            <img class="slowglow__logo white" src="image/common/slowglow/slowglow_logo.svg" alt="slowglow">
         </section>
         <section class="appeal">
-            <p class="appeal--text">
+            <p class="appeal--text left--direction">
                 <span>WANT TO KNOW</span>
             </p>
-            <p class="appeal--text">
+            <p class="appeal--text right--direction">
                 <span>WHAT<img class="appeal--image" src="image/common/junesu.png" alt="">MAKES</span>
             </p>
-            <p class="appeal--text">
+            <p class="appeal--text left--direction">
                 <span>LJS SO LJS?</span>
             </p>
         </section>
@@ -146,7 +173,6 @@
         </section>
         <section class="work"></section>
     </main>
-
     <footer class="footer">
         <h1 class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="52.156" height="80.686" viewBox="0 0 52.156 80.686">
