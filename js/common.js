@@ -4,9 +4,10 @@ $(document).ready(function () {
     menuActive();
     mouseControl();
     // sectionBg();
-    mouseTtransition();
+    // mouseTtransition();
     scrollTransition();
     contentsFade('.prologue, .appeal, .video, .slowglow');
+    scrollSection();
 });
 
 $(window).on('load',function () {
@@ -161,7 +162,7 @@ function scrollTransition() {
         // $('.loading').css({'transform' : 'translate3d(0,'+ pinkScroll +'px,0)'})
     }
     $(window).scroll(function(){
-       topBanner('.asof--text');
+       topBanner();
     });
 }
 
@@ -183,8 +184,47 @@ function bannerTextClass() {
     $('.banner--text').addClass('active');
 }
 
+function scrollSection () {
+    gsap.to(".asof__preview--top_text", {
+        yPercent: 60,
+        ease: "none",
+        scrollTrigger: {
+            markers: true,
+            trigger: ".asof__preview",
+            scrub: 2
+        },
+    });
 
-    setTimeout(function () {
-        var video = $(".slowglow.active video").get(0);
-        video.play();
-    }, 100);
+    gsap.to(".asof__preview--bottom_text", {
+        yPercent: -60,
+        ease: "none",
+        scrollTrigger: {
+            markers: true,
+            trigger: ".asof__preview",
+            scrub: 2
+        },
+    });
+
+    gsap.to(".left--direction", {
+
+        xPercent: 20,
+        ease: "none",
+        scrollTrigger: {
+            markers: true,
+            trigger: ".appeal",
+            scrub: 2,
+            start: "top center"
+        },
+    });
+
+    gsap.to(".right--direction", {
+        xPercent: -20,
+        ease: "none",
+        scrollTrigger: {
+            markers: true,
+            trigger: ".appeal",
+            scrub: 2,
+            start: "top center"
+        },
+    });
+}
