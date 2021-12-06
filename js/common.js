@@ -53,9 +53,9 @@ function scrollFadeInOut() {
         position = scroll;
 
         if ( scroll == 0 ) {
-            $('header').addClass('zero');
+            $('header').addClass('top');
         } else {
-            $('header').removeClass('zero');
+            $('header').removeClass('top');
         }
 
     });
@@ -228,7 +228,7 @@ function scrollSection () {
     });
 
     gsap.to(".card--image", {
-        xPercent: -5,
+        xPercent: -7,
         ease: "none",
         scrollTrigger: {
             markers: true,
@@ -240,7 +240,7 @@ function scrollSection () {
     });
 
     gsap.to(".card__info--text", {
-        xPercent: 5,
+        xPercent: 7,
         ease: "none",
         scrollTrigger: {
             trigger: ".card",
