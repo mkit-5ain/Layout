@@ -31,7 +31,7 @@
     }
     .menu__list { @include center; width: 100%; padding-left: 30px;
         .list { padding: 0 10px;
-            a { font-size: 18px; font-weight: 500; }
+            a { font-size: 20px; font-weight: bold; }
         }
     }
     .menu--btn {
@@ -104,11 +104,20 @@
         bottom: 48vw;
         left: 50%;
         z-index: 1;
-        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        font-size: 60px;
         font-weight: 500;
         transform: translate(-50%, 0%);
         .text {
             .text--inner {
+                padding: 0px 0.5vw;
+                font-size: 60px;
+                font-style: italic;
+                font-weight: bold;
+                text-shadow: 2px 2px 3px #0836ff;
+                -webkit-text-stroke: 2px #9b44be;
+                -webkit-text-fill-color: transparent;
                 transform: translate3d(0px, 70px, 0px);
             }
         }
@@ -133,22 +142,23 @@
             }
         }
     }
-    .banner__marquee--text {
-        display: flex;
-        position: absolute;
-        bottom: 84%;
-        left: -14vw;
-        background: #0036ff;
-        animation: banner-marquee-01 6s linear infinite;
-        &.marquee--2 { animation: banner-marquee-02 6s linear infinite; }
-        .text {
-            width: fit-content;
-            font-size: 10vw;
-            font-weight: 900;
-            font-family: 'logo';
-            font-style: italic;
-            white-space: nowrap;
-        }
+}
+.banner__marquee--text {
+    display: flex;
+    position: absolute;
+    bottom: 84%;
+    left: -14vw;
+    background: #0036ff;
+    animation: banner-marquee-01 6s linear infinite;
+    &.marquee--2 { bottom: 60%; color: #4cd9ef; background: #ffde00; animation: banner-marquee-02 8s linear infinite; }
+    &.marquee--3 { bottom: 40%; background: #ca00ff; animation: banner-marquee-03 4s linear infinite; }
+    .text {
+        width: fit-content;
+        font-size: 10vw;
+        font-weight: 900;
+        font-family: 'logo';
+        font-style: italic;
+        white-space: nowrap;
     }
 }
 .footer {
@@ -271,13 +281,13 @@
 }
 .slowglow { position: relative; @include center; padding: 0px 4vw;
     .slowglow__left--image { width: 50%; padding-right: 4vw;
-        .image { padding-top: 4vw;
+        .image { margin-top: 4vw;
             img { width: 100%; }
         }
     }
     .slowglow__right--image { width: 50%;
         video { width: 100%; }
-        .image { padding-top: 4vw;
+        .image { margin-top: 4vw;
             img { width: 100%; }
         }
     }
@@ -286,7 +296,7 @@
     position: relative;
     width: 200px;
     height: 100px;
-    margin: 30vw auto 0px;
+    margin: 30vw auto;
     border-radius: 50px;
     box-shadow: 20px 20px 60px #ccc9c4, -20px -20px 60px #ffffff;
     &--circle {
@@ -430,7 +440,7 @@
         span { display: inline-block; }
     }
 }
-.card { position: relative; height: 100vw;
+.card { position: relative; height: 100vw; overflow: hidden;
     .card--image { position: absolute; top: 50%; left: 50%; transform: translate(-85%, -50%) rotate(5deg);
         img { width: 700px; }
     }

@@ -87,7 +87,6 @@ $offset: 20vw;
 $move-initial: calc(-25% + $offset);
 $move-final: calc(-50% + $offset);
 $item-font-size: 10vw;
-
 // MIXIN
 
 @mixin center {
@@ -205,7 +204,7 @@ $item-font-size: 10vw;
 	}
 }
 
-/* 상단 배너 텍스트 애니메이션 1 */
+/* 마퀴 텍스트 애니메이션 */
 @keyframes banner-marquee-01 {
 	0% {
 		transform: rotate(-20deg) translate3d($move-initial, 0, 0);
@@ -216,6 +215,30 @@ $item-font-size: 10vw;
 
 	}
 }
+
+@keyframes banner-marquee-02 {
+	0% {
+		transform: rotate(-8deg) translate3d($move-initial, 0, 0);
+	}
+
+	100% {
+		transform: rotate(-8deg) translate3d($move-final, 0, 0);
+
+	}
+}
+
+@keyframes banner-marquee-03 {
+	0% {
+		transform: rotate(2deg) translate3d(calc(-25vw), 0, 0);
+	}
+
+	100% {
+		transform: rotate(2deg) translate3d(calc(10vw), 0, 0);
+
+	}
+}
+
+
 
 /* 메인 */
 .container {
