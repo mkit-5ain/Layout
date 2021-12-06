@@ -129,6 +129,11 @@ $item-font-size: 10vw;
   height: $height;
 }
 
+@mixin text-point {
+	text-shadow: 4px 4px 3px #111;
+	-webkit-text-stroke: 2px #111;
+	-webkit-text-fill-color: transparent;
+}
 // KEYFRAMES
 
 // 이미지 회전
