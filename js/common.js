@@ -206,7 +206,6 @@ function scrollSection () {
     });
 
     gsap.to(".left--direction", {
-
         xPercent: 20,
         ease: "none",
         scrollTrigger: {
@@ -227,4 +226,29 @@ function scrollSection () {
             start: "top center"
         },
     });
+
+    gsap.to(".card--image", {
+        xPercent: -5,
+        ease: "none",
+        scrollTrigger: {
+            markers: true,
+            trigger: ".card",
+            scrub: 1,
+            start: "top center"
+        },
+        rotation: -2
+    });
+
+    gsap.to(".card__info--text", {
+        xPercent: 5,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".card",
+            markers: true,
+            scrub: 1,
+            start: "top center"
+        },
+        rotation: 2
+    });
+
 }
