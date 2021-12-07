@@ -234,11 +234,11 @@ $item-font-size: 10vw;
 
 @keyframes banner-marquee-03 {
 	0% {
-		transform: rotate(2deg) translate3d(calc(-25vw), 0, 0);
+		transform: rotate(3deg) translate3d(calc(25%), 0, 0);
 	}
 
 	100% {
-		transform: rotate(2deg) translate3d(calc(10vw), 0, 0);
+		transform: rotate(3deg) translate3d(calc(50%), 0, 0);
 
 	}
 }

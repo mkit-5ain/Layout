@@ -177,7 +177,21 @@
     background: #0036ff;
     animation: banner-marquee-01 6s linear infinite;
     &.marquee--2 { bottom: 60%; color: #4cd9ef; background: #ffde00; animation: banner-marquee-02 8s linear infinite; }
-    &.marquee--3 { bottom: 40%; background: #ca00ff; animation: banner-marquee-03 4s linear infinite; }
+    &.marquee--3 { bottom: 40%; color: #15fc09; background: #ca00ff; animation: banner-marquee-03 8s linear infinite; }
+    .text {
+        width: fit-content;
+        font-size: 10vw;
+        font-weight: 900;
+        font-family: 'logo';
+        font-style: italic;
+        white-space: nowrap;
+    }
+}
+.card__marquee--text {
+    display: flex;
+    position: absolute;
+    &.marquee--2 { bottom: 60%; left: -14vw; color: #4cd9ef; background: #ffde00; animation: banner-marquee-02 8s linear infinite; }
+    &.marquee--3 { bottom: 50%; right: 14vw; color: #15fc09; background: #ca00ff; animation: banner-marquee-03 8s linear infinite; }
     .text {
         width: fit-content;
         font-size: 10vw;
