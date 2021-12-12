@@ -277,9 +277,9 @@
     }
     .prologue--text {
         position: relative;
-        height: 270px;
-        line-height: 250px;
-        font-size: 300px;
+        height: 13vw;
+        line-height: 13vw;
+        font-size: 16vw;
         font-family: $futura-logo;
         color: $black-color;
         letter-spacing: 15px;
@@ -287,13 +287,13 @@
         transition: 1s cubic-bezier(0.74, 0.51, 0.51, 1.26);
         opacity: 0;
         @include text-point;
-        &.effect-dot { width: 960px;
+        &.effect-dot { width: 52vw;
             .inner-dot {
                 position: absolute;
-                bottom: 30px;
-                right: -225px;
-                width: 85px;
-                height: 70px;
+                bottom: 0.15vw;
+                right: -9.5vw;
+                width: 4vw;
+                height: 3.4vw;
                 border-radius: 100%;
                 background: $primary-color;
                 transition: 1s cubic-bezier(0.32, 0.18, 0.26, 0.84);
@@ -307,9 +307,9 @@
                 content: '';
                 position: absolute;
                 bottom: -80px;
-                left: 570px;
-                width: 500px;
-                height: 150px;
+                left: 24vw;
+                width: 38vw;
+                height: 7vw;
                 border-radius: 100px;
                 background: rgb(0, 54, 255, 0.8);
                 box-shadow: 1px 1px 1px 0px #151414;
