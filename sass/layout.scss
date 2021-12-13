@@ -225,45 +225,6 @@
         }
     }
 }
-.video {
-    position: relative;
-    &.active {
-        video { width: 100%; clip-path: circle(100%); }
-        .video--top--text {
-            p {
-                span {
-                    display: block;
-                    letter-spacing: -8px;
-                    transition: .5s ease;
-                    transform: translate(0px, 0px);
-                    opacity: 1;
-                }
-            }
-        }
-    }
-    video { transition: 1s ease; clip-path: circle(33%); }
-    .video--top--text { position: absolute; top: -7vw; right: 5vw; z-index: 10;
-        p {
-            line-height: 86px;
-            font-size: 100px;
-            font-family: 'logo';
-            letter-spacing: -8px;
-            overflow: hidden;
-            span { padding: 0px 10px; transform: translate(0px, 85px); opacity: 0;
-            }
-        }
-    }
-    .video--bottom--text {
-        position: absolute;
-        bottom: -1.5vw;
-        left: 1.4vw;
-        z-index: 10;
-        line-height: 86px;
-        font-size: 100px;
-        font-family: 'logo';
-        letter-spacing: -8px;
-    }
-}
 .prologue { margin-top: 30vw;
     &.active {
         .prologue--text {
