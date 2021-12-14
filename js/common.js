@@ -6,7 +6,7 @@ $(document).ready(function () {
     // sectionBg();
     // mouseTtransition();
     scrollTransition();
-    contentsFade('.prologue, .appeal, .video, .slowglow');
+    contentsFade('.prologue, .appeal, .video, .slowglow, .image__wrap .image, .image__wrap video');
     scrollSection();
 });
 
@@ -175,6 +175,8 @@ function contentsFade (name) {
 
             if ( bottom_of_window > bottom_of_object ) {
                 $(this).addClass('active');
+            } else {
+                $(this).removeClass('active');
             }
         });
     });
