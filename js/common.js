@@ -191,7 +191,6 @@ function scrollSection () {
         yPercent: 60,
         ease: "none",
         scrollTrigger: {
-            markers: true,
             trigger: ".asof__preview",
             scrub: 2
         },
@@ -201,7 +200,6 @@ function scrollSection () {
         yPercent: -60,
         ease: "none",
         scrollTrigger: {
-            markers: true,
             trigger: ".asof__preview",
             scrub: 2
         },
@@ -211,7 +209,6 @@ function scrollSection () {
         xPercent: 20,
         ease: "none",
         scrollTrigger: {
-            markers: true,
             trigger: ".appeal",
             scrub: 2,
             start: "top center"
@@ -222,7 +219,6 @@ function scrollSection () {
         xPercent: -20,
         ease: "none",
         scrollTrigger: {
-            markers: true,
             trigger: ".appeal",
             scrub: 2,
             start: "top center"
@@ -233,7 +229,6 @@ function scrollSection () {
         xPercent: -7,
         ease: "none",
         scrollTrigger: {
-            markers: true,
             trigger: ".card",
             scrub: 1,
             start: "top center"
@@ -246,7 +241,6 @@ function scrollSection () {
         ease: "none",
         scrollTrigger: {
             trigger: ".card",
-            markers: true,
             scrub: 1,
             start: "top center"
         },
