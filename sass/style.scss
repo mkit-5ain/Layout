@@ -67,6 +67,7 @@ $black-color: #111;
 $primary-color: #0036ff;
 $second-color: #ddbe9f;
 $bg-color: #f0ede6;
+$border-color: #111;
 
 $size-s :14px;
 $size-m :18px;
@@ -109,6 +110,7 @@ $item-font-size: 10vw;
   height: $height;
 }
 @mixin text-point { text-shadow: 4px 4px 3px #111; -webkit-text-stroke: 2px #111; -webkit-text-fill-color: transparent; }
+@mixin border-line { border: 1px solid $border-color; box-sizing: border-box; }
 // KEYFRAMES
 @keyframes spin {
 	0% { transform: rotate(0deg); }
@@ -144,7 +146,10 @@ $item-font-size: 10vw;
 	0% { transform: translate3d($move-initial, 0, 0); }
 	100% { transform: translate3d($move-final, 0, 0); }
 }
-/* 마퀴 텍스트 애니메이션 */
+@keyframes top-marquee {
+	0% { transform: translate3d(calc(25%), 0, 0); }
+	100% { transform: translate3d(calc(50%), 0, 0); }
+}
 @keyframes banner-marquee-01 {
 	0% { transform: rotate(-20deg) translate3d($move-initial, 0, 0); }
 	100% { transform: rotate(-20deg) translate3d($move-final, 0, 0); }
@@ -207,4 +212,9 @@ $item-font-size: 10vw;
         clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
         text-shadow: 2px -1px 6px rgba(0,0,0,0.3);
 	}
+}
+.section-title {
+	font-size: 5.56vw;
+	font-weight: bold;
+	letter-spacing: -7px;
 }
