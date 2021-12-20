@@ -3,10 +3,9 @@ $(document).ready(function () {
     scrollFadeInOut();
     menuActive();
     mouseControl();
-    // sectionBg();
-    // mouseTtransition();
     scrollTransition();
     contentsFade('.prologue, .appeal, .video, .slowglow, .image__wrap .image, .image__wrap video');
+    textAreaActive('.typo span');
     scrollSection();
 });
 
@@ -169,14 +168,26 @@ function scrollTransition() {
 function contentsFade (name) {
     $(window).scroll(function () {
         $(name).each(function () {
-            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
             var bottom_of_window = $(window).scrollTop() + $(window).height() + 420;
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
             var scroll = $(window).scrollTop();
 
             if ( bottom_of_window > bottom_of_object ) {
                 $(this).addClass('active');
-            } else {
-                $(this).removeClass('active');
+            }
+        });
+    });
+}
+
+function textAreaActive (name) {
+    $(window).scroll(function () {
+        $(name).each(function () {
+            var bottom_of_window = $(window).scrollTop() + $(window).height() -200;
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var scroll = $(window).scrollTop();
+
+            if ( bottom_of_window > bottom_of_object ) {
+                $(this).addClass('active');
             }
         });
     });
@@ -246,5 +257,24 @@ function scrollSection () {
         },
         rotation: 2
     });
-
 }
+
+$(function () {
+    $("#layout__wrap").fadeIn(500, function () {
+        $(this).animate({
+            "top": "150px"
+        },1000);
+    });
+
+    $("a").click(function () {
+        var url = $(this).attr("href");
+        $("#layout__wrap").animate({
+            "opacity": "0",
+            "top": "10px"
+        }, 500, function () {
+            document.location.href = url;
+        });
+
+        return false;
+    });
+});
