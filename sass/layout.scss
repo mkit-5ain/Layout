@@ -16,11 +16,9 @@
         left: 2vw;
         font-size: 20px;
         font-weight: bold;
+        letter-spacing: -10px;
         opacity: 0;
-        transition: .5s ease;
-        .text { letter-spacing: -10px;
-            span { letter-spacing: 0px; }
-        }
+        .text { display: inline-block; overflow: hidden; }
     }
     .menu__list { @include center; width: 100%; padding-left: 30px;
         .list { position: relative; padding: 10px;
@@ -36,17 +34,31 @@
                 transition: .4s ease;
                 background: $primary-color;
             }
-            a {
-                font-size: 20px;
-                font-weight: bold;
-                line-height: 0px;
-                color: #fff;
-            }
+            a { font-size: 20px; font-weight: bold; line-height: 0px; color: #fff; }
         }
     }
     &.top {
         .logo { top: 8vw; left: 2vw; width: calc(100vw - 4vw); transform: translate(0%, 0vw); }
-        .text__toggle { opacity: 1; }
+        .text__toggle { opacity: 1;
+            .text {
+                span {
+                    display: inline-block;
+                    letter-spacing: 0px;
+                    transform: translate(0px, 0px);
+                    animation: text-toggle;
+                    animation-fill-mode: forwards;
+                    opacity: 0;
+                }
+                @for $i from 1 through 19 {
+                    &:nth-child(#{$i}) {
+                        span {
+                            animation-delay: $i /4 + s;
+                            animation-duration: $i /8 + s;
+                        }
+                    }
+                }
+            }
+        }
         .menu__list {
             .list { position: relative;
                 &:after { content: ''; height: 0%; background: transparent; }
@@ -323,11 +335,11 @@
     .image__wrap--right { width: 50%;}
 }
 .typograph__wrap {
-    .typo { margin: 10vw 8vw; line-height: 43px; font-size: 2vw; color: #999;
+    .typo { margin: 10vw 8vw; line-height: 60px; font-size: 3vw; color: #ccc;
         > span { display: block;
             &.active { color: #111; transition: 1s ease; }
         }
-        span:nth-child(2n) { padding-bottom: 20px; }
+        span:nth-child(2n) { padding-bottom: 60px; }
     }
 }
 .loading {
