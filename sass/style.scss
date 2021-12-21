@@ -104,23 +104,28 @@ $item-font-size: 10vw;
     &::after { content: ''; display: table; clear: both; }
 }
 @mixin spritebox($left, $top, $width, $height) {
-  background-repeat: no-repeat;
-  background-position: $left $top;
-  width: $width;
-  height: $height;
+	background-repeat: no-repeat;
+	background-position: $left $top;
+	width: $width;
+	height: $height;
 }
 @mixin text-point { text-shadow: 4px 4px 3px #111; -webkit-text-stroke: 2px #111; -webkit-text-fill-color: transparent; }
 @mixin border-line { border: 1px solid $border-color; box-sizing: border-box; }
+@mixin text-stroke {
+	text-shadow: 4px 4px 3px #111;
+	-webkit-text-stroke: 2px #111;
+	-webkit-text-fill-color: transparent;
+}
 // KEYFRAMES
 @keyframes introTextAnimation {
     from { opacity: 0; transform: translate(-500px, -100px); }
     to { opacity: 1; transform: translate(-80px, 0px); }
 }
 @media screen and ( max-width: 750px ) {
-  @keyframes introTextAnimation {
-    from { opacity: 0; transform: translate(-500px, -50px); }
-    to { opacity: 1; transform: translate(-5vw, 0px); }
-  }
+	@keyframes introTextAnimation {
+		from { opacity: 0; transform: translate(-500px, -50px); }
+		to { opacity: 1; transform: translate(-5vw, 0px); }
+	}
 }
 // 메인 텍스트 dot
 @keyframes dotAnimation {
@@ -195,27 +200,39 @@ $item-font-size: 10vw;
         width: 100%;
         height: 50%;
         color: #fbf7f4;
+		text-shadow: 2px -1px 6px rgba(0,0,0,0.2);
         overflow: hidden;
         transform: translate(1.6vw, 0) skew(-13deg) scale(1, 1.2);
-        text-shadow: 2px -1px 6px rgba(0,0,0,0.2);
 	}
 	&:after {
         content: attr(data-heading);
         position: absolute;
+		top: 0;
         left: 0;
         z-index: 1;
-        top: 0;
         width: 100%;
         height: 100%;
         color: #d3cfcc;
+		text-shadow: 2px -1px 6px rgba(0,0,0,0.3);
         overflow: hidden;
         transform: translate(0, 0) skew(13deg) scale(1, 0.8);
         clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
-        text-shadow: 2px -1px 6px rgba(0,0,0,0.3);
 	}
 }
+/* 섹션 타이틀 */
 .section-title {
+	padding: 0 34vw;
 	font-size: 5.56vw;
 	font-weight: bold;
+	color: #111;
+	text-align: center;
 	letter-spacing: -7px;
+	text-transform: uppercase;
+	div {
+		background: #111;
+		color: #fff;
+		transform: rotate(1.2deg);
+	}
 }
+/* 텍스트 외곽선 */
+.text-stroke { @include text-stroke; }

@@ -52,8 +52,8 @@
                 @for $i from 1 through 19 {
                     &:nth-child(#{$i}) {
                         span {
-                            animation-delay: $i /4 + s;
-                            animation-duration: $i /8 + s;
+                            animation-delay: $i / 4 + s;
+                            animation-duration: $i / 8 + s;
                         }
                     }
                 }
@@ -171,20 +171,14 @@
         &.active {
             .text { display: inline-block; overflow: hidden;
                 .text--inner { display: block; transform: translate3d(0px, 0px, 0px); transition: .5s ease; }
-                &:nth-child(2){
-                    .text--inner{
-                        transition: 1s ease;
-                    }
+                &:nth-child(2) {
+                    .text--inner { transition: 1s ease; }
                  }
                 &:nth-child(3){
-                    .text--inner{
-                        transition: 1.5s ease;
-                    }
+                    .text--inner { transition: 1.5s ease; }
                  }
-                &:nth-child(4){
-                    .text--inner{
-                        transition: 2s ease;
-                    }
+                &:nth-child(4) {
+                    .text--inner { transition: 2s ease; }
                  }
             }
         }
@@ -194,10 +188,10 @@
     display: flex;
     position: absolute;
     top: 0%;
-    right: 14vw;
-    color: #4cd9ef;
-    background: #ffde00;
-    animation: top-marquee 3s linear infinite;
+    right: 0vw;
+    border: 1px solid #111;
+    background: #f0ede6;
+    animation: top-marquee 10s linear infinite;
     .text {
         width: fit-content;
         padding: 0 1vw;
@@ -211,12 +205,14 @@
 .banner__marquee--text {
     display: flex;
     position: absolute;
-    bottom: 88%;
+    top: -34vw;
     left: -14vw;
-    background: #0036ff;
-    animation: banner-marquee-01 6s linear infinite;
+    border: 1px solid #111;
+    background: #f0ede6;
+    animation: banner-marquee-01 10s linear infinite;
     .text {
         width: fit-content;
+        padding: 0 1vw;
         font-size: 10vw;
         font-weight: 900;
         font-family: 'logo';
@@ -294,7 +290,7 @@
                 background: $primary-color;
                 transition: 1s cubic-bezier(0.32, 0.18, 0.26, 0.84);
                 opacity: 0;
-                box-shadow: 1px 1px 10px 0px #151414
+                box-shadow: 1px 1px 10px 0px #151414;
             }
         }
         &.effect-blur { animation-delay: 0.4s; }
@@ -332,14 +328,14 @@
 
     }
     .image__wrap--left { width: 50%; padding-right: 4vw; }
-    .image__wrap--right { width: 50%;}
+    .image__wrap--right { width: 50%; }
 }
 .typograph__wrap {
-    .typo { margin: 10vw 8vw; line-height: 60px; font-size: 3vw; color: #ccc;
+    .typo { margin: 10vw 8vw; line-height: 43px; font-size: 2vw; color: #ccc;
         > span { display: block;
             &.active { color: #111; transition: 1s ease; }
         }
-        span:nth-child(2n) { padding-bottom: 60px; }
+        > span:nth-child(2n) { padding-bottom: 60px; }
     }
 }
 .loading {
@@ -365,7 +361,7 @@
         &:nth-child(3) { left: auto; right: 20%; animation-delay: 0.5s; }
     }
 }
-.work { padding: 5vw 0px; counter-reset: section;
+.work { padding: 5vw 0px; counter-reset: section; overflow: hidden;
     .work__list { cursor: default; position: relative; padding: 0 5vw;
         .work__list--link {
         	display: inline-block;
@@ -377,8 +373,8 @@
             font-size: $item-font-size;
         	font-weight: 900;
             color: transparent;
-        	-webkit-text-stroke: 1.5px #000;
-        	text-stroke: 1.5px #000;
+        	-webkit-text-stroke: 1.5px #111;
+        	text-stroke: 1.5px #111;
         	-webkit-text-fill-color: transparent;
         	text-fill-color: transparent;
         	transition: opacity 0.4s;
@@ -396,7 +392,7 @@
                 font-family: 'logo';
                 pointer-events: none;
                 -webkit-text-stroke: 1.5px #111;
-                text-stroke: 1px #000;
+                text-stroke: 1px #111;
                 -webkit-text-fill-color: transparent;
                 text-fill-color: transparent;
             }
@@ -491,6 +487,7 @@
     align-items: center;
     align-content: center;
     overflow: hidden;
+    // transform: rotate(-5deg);
     .appeal--text { color: #111; font-size: 8vw; font-family: 'logo';
         .appeal--image { width: 5.7vw; padding: 0px 10px; vertical-align: baseline; transition: .3s ease-in-out; filter: blur(2px); }
         span { display: inline-block; @include text-point; transition: .3s ease-in-out; }
