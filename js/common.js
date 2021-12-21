@@ -158,7 +158,6 @@ function scrollTransition() {
                 }
             });
         });
-        // $('.loading').css({'transform' : 'translate3d(0,'+ pinkScroll +'px,0)'})
     }
     $(window).scroll(function(){
        topBanner();
@@ -259,22 +258,22 @@ function scrollSection () {
     });
 }
 
-$(function () {
-    $("#layout__wrap").fadeIn(500, function () {
-        $(this).animate({
-            "top": "150px"
-        },1000);
-    });
-
-    $("a").click(function () {
-        var url = $(this).attr("href");
-        $("#layout__wrap").animate({
-            "opacity": "0",
-            "top": "10px"
-        }, 500, function () {
-            document.location.href = url;
-        });
-
-        return false;
-    });
-});
+// $(function () {
+//     $("#layout__wrap").fadeIn(500, function () {
+//         $(this).animate({
+//             "top": "150px"
+//         },1000);
+//     });
+//
+//     $("a").click(function () {
+//         var url = $(this).attr("href");
+//         $("#layout__wrap").animate({
+//             "opacity": "0",
+//             "top": "10px"
+//         }, 500, function () {
+//             document.location.href = url;
+//         });
+//
+//         return false;
+//     });
+// });
